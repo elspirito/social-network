@@ -11,4 +11,5 @@ export const Main = () => {
 
 const StyledMain = styled.main`
   background-color: #bbb;
+  grid-area: m;
 `

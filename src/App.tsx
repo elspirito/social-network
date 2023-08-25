@@ -1,20 +1,18 @@
 import React from 'react';
 import {Header} from "./layout/header/Header";
-import {Footer} from "./layout/footer/Footer";
 import {AsideRight} from "./layout/asideRight/AsideRight";
 import {AsideLeft} from "./layout/asideLeft/AsideLeft";
 import {Main} from '../src/layout/main/Main'
-import {ContainerWrapper} from "./components/ContainerWrapper";
+import {Layout} from "./components/Layout";
 
 function App() {
   return (
-    <ContainerWrapper>
+    <Layout>
         <Header/>
         <AsideLeft/>
         <Main/>
         <AsideRight/>
-        <Footer/>
-    </ContainerWrapper>
+    </Layout>
   );
 }
 

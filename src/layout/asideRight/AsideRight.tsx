@@ -11,4 +11,5 @@ export const AsideRight = () => {
 
 const StyledAsideRight = styled.aside`
   background-color: #aaa;
+  grid-area: r;
 `
