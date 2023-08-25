@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from "styled-components";
-import ContentTitle from "./contentTitle/ContentTitle";
+import {PageTitle} from "./pageTitle/PageTitle";
 import {ContentSearch} from "./contentSearch/ContentSearch";
 
 export const ContentHeader = () => {
     return (
         <StyledContentHeader>
-            <ContentTitle/>
+            <PageTitle/>
             <ContentSearch/>
         </StyledContentHeader>
     );

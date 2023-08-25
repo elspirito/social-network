@@ -21,4 +21,5 @@ const StyledHeader = styled.header`
   display: grid;
   grid-template-columns: .5fr 1fr .5fr;
   align-items: center;
+  border-bottom: 1px solid #ebedf0;
 `

@@ -4,7 +4,7 @@ import {Icon} from "../../../components/icon/Icon";
 
 export const Logo = () => {
     return (
-        <StyledLogo>
+        <StyledLogo href={"/"}>
             <LogoSign>
                 <Icon iconId={'tempLogo'}/>
             </LogoSign>
@@ -14,14 +14,26 @@ export const Logo = () => {
     );
 };
 
-const StyledLogo = styled.div`
+const StyledLogo = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 24px;
+  color: #000;
+  text-decoration: none;
+  
   span {
     font-size: 20px;
     font-weight: bold;
+  }
+  
+  &:hover {
+    color: red;
   }
 `
 const LogoSign = styled.div`
   padding: 12px;
   border-radius: 12px;
   background-color: #1B79E5;
+  color: #fff;
 `
