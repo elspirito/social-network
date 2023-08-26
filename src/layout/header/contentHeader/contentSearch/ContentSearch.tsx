@@ -8,6 +8,7 @@ export const ContentSearch = () => {
 };
 
 const StyledInput = styled.input`
+  font-family: 'Inter', sans-serif;
   border: 0;
   background-color: #F5F7FB;
   height: 48px;

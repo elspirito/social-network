@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from "styled-components";
+import {Friends} from './friends/Friends';
 
 export const AsideRight = () => {
     return (
         <StyledAsideRight>
-            AsideRight
+            <Friends/>
         </StyledAsideRight>
     );
 };
 
 const StyledAsideRight = styled.aside`
-  background-color: #aaa;
   grid-area: r;
+  padding: 24px;
 `
