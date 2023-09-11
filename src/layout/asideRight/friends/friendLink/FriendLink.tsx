@@ -1,13 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Avatar} from '../../../../components/avatar/Avatar';
+import {UserPic} from '../../../../components/userPic/UserPic';
 import avatar_0004 from '../../../../img/avatars/avatar_0004.webp'
 import {Icon} from '../../../../components/icon/Icon';
 
-export const FriendLink = () => {
+type FriendLinkPropsType = {
+    isOnline: boolean
+}
+
+export const FriendLink: React.FC<FriendLinkPropsType> = (props) => {
     return (
         <StyledFriendLink>
-            <Avatar src={avatar_0004}><Status/></Avatar>
+            <FriendUserPic>
+                <Badge isOnline={props.isOnline}/>
+                <UserPic src={avatar_0004}/>
+            </FriendUserPic>
             <FullName>
                 <UserName>firstName LastName</UserName>
                 <LoginName>@petrushka</LoginName>
@@ -21,17 +28,33 @@ const StyledFriendLink = styled.a`
   display: flex;
   gap: 8px;
   padding: 8px;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   border-radius: 8px;
+  cursor: pointer;
   
   &:hover {
     background-color: #eee;
   }
 `
-const Status = styled.div``
+const FriendUserPic = styled.div`
+  position: relative;
+  flex-shrink: 0;
+`
+const Badge = styled.div<FriendLinkPropsType>`
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  padding: 4px;
+  outline: 4px solid #fff;
+  border-radius: 50%;
+  background-color: ${props => props.isOnline ? 'green' : 'lightgrey'};
+`
 const FullName = styled.div`
-
+    width: 100%;
 `
 const UserName = styled.p`
 

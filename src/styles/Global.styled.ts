@@ -5,4 +5,10 @@ body {
   background-color: #F5F7FB;
   font-family: 'Inter', sans-serif;
 }
+
+textarea {
+  width: 100%;
+  resize: vertical;
+}
+
 `

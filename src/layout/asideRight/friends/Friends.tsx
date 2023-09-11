@@ -14,16 +14,16 @@ const friends = [
     {id: 7, avatar: avatar_0004, firstName: 'Варвара', lastName: 'Рассказова', isOnline: false}
 ]
 
-export const Friends = () => {
+export const Friends: React.FC = () => {
     return (
         <StyledFriends>
             <h3>Friends (42 online)</h3>
             <ul>
-                <FriendLink/>
-                <FriendLink/>
-                <FriendLink/>
-                <FriendLink/>
-                <FriendLink/>
+                <FriendLink isOnline={true}/>
+                <FriendLink isOnline={true}/>
+                <FriendLink isOnline={false}/>
+                <FriendLink isOnline={false}/>
+                <FriendLink isOnline={false}/>
             </ul>
         </StyledFriends>
     );
