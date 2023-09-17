@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
-import {NavLink} from "../../../components/navLink/NavLink";
+import {NavLink, Routes, Route} from "react-router-dom";
+import {Profile} from "../../main/pages/profile/Profile";
+import {Messages} from "../../main/pages/messages/Messages";
 
 let pages = [
     {id: 1, title: 'Profile', src: '#'},
@@ -15,8 +17,11 @@ export const Navbar = () => {
     return (
         <StyledNavbar>
             <ul>
-                {pages.map(i => <li key={i.id}><NavLink href={'#'} linkText={i.title}/></li>)}
+                {/*{pages.map(el => <li key={el.id}><NavLink href={'#'} icon={'tempLogo'} linkText={el.title}/></li>)}*/}
+                <NavLink to={'/profile'}>Profile</NavLink>
+                <NavLink to={'/messages'}>Messages</NavLink>
             </ul>
+
         </StyledNavbar>
     );
 };

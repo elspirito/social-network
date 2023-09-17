@@ -3,17 +3,17 @@ import styled from "styled-components";
 import {ProfileHeader} from "./pages/profile/profileHeader/ProfileHeader";
 import {PostWritingForm} from "./pages/profile/postWritingForm/PostWritingForm";
 import {Post} from "./pages/profile/post/Post";
+import {Profile} from "./pages/profile/Profile";
+import {Messages} from "./pages/messages/Messages";
+import {Route, Routes} from "react-router-dom";
 
 export const Main = () => {
     return (
         <StyledMain>
-            <ProfileHeader/>
-            <PostWritingForm/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
+            <Routes>
+                <Route path={'/profile'} element={<Profile/>}/>
+                <Route path={'/messages'} element={<Messages/>}/>
+            </Routes>
         </StyledMain>
     );
 };

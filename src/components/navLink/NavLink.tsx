@@ -18,7 +18,7 @@ export const NavLink: React.FC<NavLinkPropsType> = (props) => {
 };
 
 const StyledNavLink = styled.a`
-
+ padding: 8px;
 `
 const NavIcon = styled.span`
 
