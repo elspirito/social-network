@@ -4,7 +4,7 @@ import {ProfileHeader} from "./pages/profile/profileHeader/ProfileHeader";
 import {PostWritingForm} from "./pages/profile/postWritingForm/PostWritingForm";
 import {Post} from "./pages/profile/post/Post";
 import {Profile} from "./pages/profile/Profile";
-import {Messages} from "./pages/messages/Messages";
+import {Dialogs} from "./pages/dialogs/Dialogs";
 import {Route, Routes} from "react-router-dom";
 
 export const Main = () => {
@@ -12,7 +12,7 @@ export const Main = () => {
         <StyledMain>
             <Routes>
                 <Route path={'/profile'} element={<Profile/>}/>
-                <Route path={'/messages'} element={<Messages/>}/>
+                <Route path={'/dialogs'} element={<Dialogs/>}/>
             </Routes>
         </StyledMain>
     );
@@ -20,8 +20,8 @@ export const Main = () => {
 
 const StyledMain = styled.main`
   grid-area: m;
-  margin: 24px 0;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding-right: 24px;
 `

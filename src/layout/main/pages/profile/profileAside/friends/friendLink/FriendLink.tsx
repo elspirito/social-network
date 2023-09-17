@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import {UserPic} from '../../../../components/userPic/UserPic';
-import avatar_0004 from '../../../../img/avatars/avatar_0004.webp'
-import {Icon} from '../../../../components/icon/Icon';
+import {UserPic} from '../../../../../../../components/userPic/UserPic';
+import avatar_0004 from '../../../../../../../img/avatars/avatar_0004.webp'
+import {Icon} from '../../../../../../../components/icon/Icon';
 
 type FriendLinkPropsType = {
     isOnline: boolean

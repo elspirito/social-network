@@ -19,7 +19,7 @@ const StyledHeader = styled.header`
   height: 100px;
   grid-area: h;
   display: grid;
-  grid-template-columns: .5fr 1fr .5fr;
+  grid-template-columns: calc(20vw + 24px) 1fr calc(20vw + 24px);
   align-items: center;
   border-bottom: 1px solid #ebedf0;
 `

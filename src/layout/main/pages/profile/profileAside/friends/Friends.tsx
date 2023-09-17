@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {FriendLink} from './friendLink/FriendLink';
-import avatar_0004 from '../../../img/avatars/avatar_0004.webp'
+import avatar_0004 from '../../../../../../img/avatars/avatar_0004.webp'
 
 
 const friends = [

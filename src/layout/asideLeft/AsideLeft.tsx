@@ -14,8 +14,8 @@ export const AsideLeft = () => {
 
 const StyledAsideLeft = styled.aside`
   grid-area: l;
-  padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding-left: 24px;
 `

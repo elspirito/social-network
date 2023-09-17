@@ -1,6 +1,6 @@
 import React from 'react';
 import {Header} from "./layout/header/Header";
-import {AsideRight} from "./layout/asideRight/AsideRight";
+import {ProfileAside} from "./layout/main/pages/profile/profileAside/ProfileAside";
 import {AsideLeft} from "./layout/asideLeft/AsideLeft";
 import {Main} from '../src/layout/main/Main'
 import {Layout} from "./components/Layout";
@@ -11,7 +11,6 @@ function App() {
         <Header/>
         <AsideLeft/>
         <Main/>
-        <AsideRight/>
     </Layout>
   );
 }

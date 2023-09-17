@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import {Friends} from './friends/Friends';
 
-export const AsideRight = () => {
+export const ProfileAside = () => {
     return (
         <StyledAsideRight>
             <Friends/>
@@ -12,5 +12,4 @@ export const AsideRight = () => {
 
 const StyledAsideRight = styled.aside`
   grid-area: r;
-  padding: 24px;
 `
