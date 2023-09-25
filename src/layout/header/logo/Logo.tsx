@@ -36,4 +36,5 @@ const LogoSign = styled.div`
   border-radius: 12px;
   background-color: #1B79E5;
   color: #fff;
+  line-height: 0;
 `

@@ -6,13 +6,17 @@ import {Post} from "./pages/profile/post/Post";
 import {Profile} from "./pages/profile/Profile";
 import {Dialogs} from "./pages/dialogs/Dialogs";
 import {Route, Routes} from "react-router-dom";
+import {FriendType} from "../../state/state";
 
-export const Main = () => {
+type MainPropsType = {
+    friends: FriendType[]
+}
+export const Main: React.FC<MainPropsType> = ({friends}) => {
     return (
         <StyledMain>
             <Routes>
-                <Route path={'/profile'} element={<Profile/>}/>
-                <Route path={'/dialogs'} element={<Dialogs/>}/>
+                <Route path={'/profile'} element={<Profile friends={friends}/>}/>
+                <Route path={'/dialogs'} element={<Dialogs friends={friends}/>}/>
             </Routes>
         </StyledMain>
     );

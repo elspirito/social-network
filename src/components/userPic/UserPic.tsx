@@ -16,4 +16,5 @@ const StyledAvatar = styled.img<AvatarPropsType>`
   width: 48px;
   height: 48px;
   border-radius: ${props => props.borderRadius || '50%'};
+  flex-shrink: 0;
 `

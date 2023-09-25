@@ -1,17 +1,32 @@
 import React from 'react';
 import styled from "styled-components";
-import {DialogItem} from "./dialogItem/DialogItem";
 import {DialogWindow} from "./dialogWindow/DialogWindow";
+import {FriendItem} from "../../../../components/friendItem/FriendItem";
+import {Search} from "../../../../components/search/Search";
+import {FriendType} from "../../../../state/state";
 
-export const Dialogs = () => {
+type DialogsPropsType = {
+    friends: FriendType[]
+}
+
+export const Dialogs: React.FC<DialogsPropsType> = ({friends}) => {
     return (
         <StyledDialogs>
             <DialogsList>
-                <DialogItem/>
-                <DialogItem/>
-                <DialogItem/>
-                <DialogItem/>
-                <DialogItem/>
+                <Search/>
+                {friends.map(f => {
+
+                    return(
+                        <FriendItem
+                            key={f.id}
+                            firstName={f.firstName}
+                            lastName={f.lastName}
+                            login={f.login}
+                            isOnline={f.isOnline}
+                        />
+                    )
+
+                })}
             </DialogsList>
             <DialogWindow/>
         </StyledDialogs>
@@ -19,13 +34,12 @@ export const Dialogs = () => {
 };
 
 const StyledDialogs = styled.div`
-  padding: 24px;
   background: #fff;
   border-radius: 12px;
   display: flex;
   flex-direction: row;
 `
 const DialogsList = styled.div`
-border-right: 1px solid #eee;
+  border-right: 1px solid #eee;
   padding: 24px;
 `

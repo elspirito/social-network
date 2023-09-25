@@ -4,8 +4,13 @@ import {ProfileHeader} from "./profileHeader/ProfileHeader";
 import {PostWritingForm} from "./postWritingForm/PostWritingForm";
 import {Post} from "./post/Post";
 import {ProfileAside} from "./profileAside/ProfileAside";
+import {FriendType} from "../../../../state/state";
 
-export const Profile = () => {
+type ProfilePropsType = {
+    friends: FriendType[]
+}
+
+export const Profile: React.FC<ProfilePropsType> = ({friends}) => {
     return (
         <StyledProfile>
             <ProfileContent>
@@ -15,7 +20,7 @@ export const Profile = () => {
                 <Post/>
                 <Post/>
             </ProfileContent>
-            <ProfileAside/>
+            <ProfileAside friends={friends}/>
         </StyledProfile>
     );
 };

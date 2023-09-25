@@ -30,4 +30,13 @@ const StyledNavbar = styled.div`
   background-color: #fff;
   padding: 24px;
   border-radius: 12px;
+  
+  & > ul {
+    display: flex;
+    flex-direction: column;
+    
+    & > a {
+      padding: 8px 0;
+    }
+  }
 `

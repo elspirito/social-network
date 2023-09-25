@@ -1,11 +1,16 @@
 import React from 'react';
 import styled from "styled-components";
 import {Friends} from './friends/Friends';
+import {FriendType} from "../../../../../state/state";
 
-export const ProfileAside = () => {
+type ProfileAsidePropsType = {
+    friends: FriendType[]
+}
+
+export const ProfileAside: React.FC<ProfileAsidePropsType> = ({friends}) => {
     return (
         <StyledAsideRight>
-            <Friends/>
+            <Friends friends={friends}/>
         </StyledAsideRight>
     );
 };

@@ -1,16 +1,17 @@
 import React from 'react';
 import {Header} from "./layout/header/Header";
-import {ProfileAside} from "./layout/main/pages/profile/profileAside/ProfileAside";
 import {AsideLeft} from "./layout/asideLeft/AsideLeft";
 import {Main} from '../src/layout/main/Main'
 import {Layout} from "./components/Layout";
+import {state} from "./state/state";
 
-function App() {
+
+const App: React.FC = () => {
   return (
     <Layout>
         <Header/>
         <AsideLeft/>
-        <Main/>
+        <Main friends={state.friends}/>
     </Layout>
   );
 }

@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from "styled-components";
 import {PageTitle} from "./pageTitle/PageTitle";
-import {ContentSearch} from "./contentSearch/ContentSearch";
+import {Search} from "../../../components/search/Search";
 
 export const ContentHeader = () => {
     return (
         <StyledContentHeader>
             <PageTitle/>
-            <ContentSearch/>
+            <Search/>
         </StyledContentHeader>
     );
 };
