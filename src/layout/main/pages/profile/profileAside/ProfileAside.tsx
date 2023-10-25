@@ -1,16 +1,15 @@
 import React from 'react';
 import styled from "styled-components";
 import {Friends} from './friends/Friends';
-import {FriendType} from "../../../../../state/state";
+import {useSelector} from "react-redux";
+import {selectFriends} from "../../../../../store/selectors";
 
-type ProfileAsidePropsType = {
-    friends: FriendType[]
-}
 
-export const ProfileAside: React.FC<ProfileAsidePropsType> = ({friends}) => {
+export const ProfileAside: React.FC = () => {
+
     return (
         <StyledAsideRight>
-            <Friends friends={friends}/>
+            <Friends/>
         </StyledAsideRight>
     );
 };

@@ -3,13 +3,14 @@ import styled from "styled-components";
 import {DialogWindow} from "./dialogWindow/DialogWindow";
 import {FriendItem} from "../../../../components/friendItem/FriendItem";
 import {Search} from "../../../../components/search/Search";
-import {FriendType} from "../../../../state/state";
+import {useSelector} from "react-redux";
+import {selectFriends} from "../../../../store/selectors";
 
-type DialogsPropsType = {
-    friends: FriendType[]
-}
 
-export const Dialogs: React.FC<DialogsPropsType> = ({friends}) => {
+export const Dialogs: React.FC = () => {
+
+    const friends = useSelector(selectFriends)
+
     return (
         <StyledDialogs>
             <DialogsList>

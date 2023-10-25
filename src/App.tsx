@@ -3,7 +3,7 @@ import {Header} from "./layout/header/Header";
 import {AsideLeft} from "./layout/asideLeft/AsideLeft";
 import {Main} from '../src/layout/main/Main'
 import {Layout} from "./components/Layout";
-import {state} from "./state/state";
+
 
 
 const App: React.FC = () => {
@@ -11,7 +11,7 @@ const App: React.FC = () => {
     <Layout>
         <Header/>
         <AsideLeft/>
-        <Main friends={state.friends}/>
+        <Main/>
     </Layout>
   );
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
-import headerImg from '../../../../../img/profileHeaderImg.png'
+import headerImg from '../../../../../assets/img/profileHeaderImg.png'
 import {UserPic} from "../../../../../components/userPic/UserPic";
-import avatar_0004 from '../../../../../img/avatars/avatar_0004.webp'
+import avatar_0004 from '../../../../../assets/img/avatars/avatar_0004.webp'
 
 export const ProfileHeader = () => {
     return (

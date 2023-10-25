@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import {FriendItem} from '../../../../../../components/friendItem/FriendItem';
-import avatar_0004 from '../../../../../../img/avatars/avatar_0004.webp'
-import {FriendType} from "../../../../../../state/state";
+import {useSelector} from "react-redux";
+import {selectFriends} from "../../../../../../store/selectors";
 
-type FriendsPropsType = {
-    friends: FriendType[]
-}
 
-export const Friends: React.FC<FriendsPropsType> = ({friends}) => {
+export const Friends: React.FC = () => {
+
+    const friends = useSelector(selectFriends)
+
     return (
         <StyledFriends>
             <h3>Friends (42 online)</h3>
