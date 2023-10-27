@@ -16,6 +16,7 @@ export const PostSendForm: React.FC<PropsType> = ({addItem}) => {
     }
     const onClickHandler = () => {
         addItem(inputValue)
+        setInputValue('')
     }
 
     return (
