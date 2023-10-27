@@ -14,6 +14,10 @@ export const PostSendForm: React.FC<PropsType> = ({addItem}) => {
     const onChangeHandler = (text: string) => {
         setInputValue(text)
     }
+    const onKeyDownHandler = () => {
+        addItem(inputValue)
+        setInputValue('')
+    }
     const onClickHandler = () => {
         addItem(inputValue)
         setInputValue('')
@@ -21,7 +25,7 @@ export const PostSendForm: React.FC<PropsType> = ({addItem}) => {
 
     return (
         <StyledPostWritingForm>
-            <Input placeholder={'POST HERE'} onChange={onChangeHandler} value={inputValue}/>
+            <Input placeholder={'POST HERE'} onChange={onChangeHandler} value={inputValue} onKeyDown={onKeyDownHandler}/>
             <Button name={'Отправить'} onClick={onClickHandler}/>
         </StyledPostWritingForm>
     );

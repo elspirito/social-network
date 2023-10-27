@@ -1,22 +1,29 @@
-import React, {ChangeEvent, ChangeEventHandler} from 'react';
+import React, {ChangeEvent} from 'react';
 import styled from "styled-components";
 
 type PropsType = {
     placeholder: string
-    onChange: (text: string) => void
     value: string
+    onChange: (text: string) => void
+    onKeyDown: (text: string) => void
 }
 
 export const Input: React.FC<PropsType> = (
     {
         placeholder,
+        value,
         onChange,
-        value
+        onKeyDown
     }
 ) => {
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         onChange(e.currentTarget.value)
+    }
+    const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+       if (e.key === 'Enter') {
+           onKeyDown(e.currentTarget.value)
+       }
     }
 
     return (
@@ -24,6 +31,7 @@ export const Input: React.FC<PropsType> = (
             placeholder={placeholder}
             value={value}
             onChange={onChangeHandler}
+            onKeyDown={onKeyDownHandler}
         />
     );
 };
