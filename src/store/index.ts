@@ -1,11 +1,12 @@
 import {combineReducers, createStore} from "redux";
-import {friendsReducer} from "./reducers/friendsReducer";
+import {friendsReducer, postReducer} from "./reducers";
 
 
 
 export const rootReducer = combineReducers(
     {
         friendsReducer,
+        postReducer
     }
 )
 export let store = createStore(rootReducer)

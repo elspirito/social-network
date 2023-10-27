@@ -1,4 +1,5 @@
 
+
 export type FriendType = {
     id: string
     userPic: string
@@ -6,9 +7,5 @@ export type FriendType = {
     lastName: string
     login: string
     isOnline: boolean
-}
-
-export type FriendsStateType = {
-    friends: FriendType[]
 }
 

@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 import styled from "styled-components";
 
-export const Post: React.FC = () => {
+type PropsType = {
+    postText: string
+    children?: ReactNode;
+}
+
+export const Post: React.FC<PropsType> = ({postText,children}) => {
     return (
         <StyledPost>
-            Post
+            {postText}
         </StyledPost>
     );
 };

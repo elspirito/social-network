@@ -1,20 +1,31 @@
 import React from 'react';
 import styled from "styled-components";
 import {ProfileHeader} from "./profileHeader/ProfileHeader";
-import {PostWritingForm} from "./postWritingForm/PostWritingForm";
+import {PostSendForm} from "./postWritingForm/PostSendForm";
 import {Post} from "./post/Post";
 import {ProfileAside} from "./profileAside/ProfileAside";
+import {useDispatch, useSelector} from "react-redux";
+import {selectPosts} from "../../../../store/selectors/selectPosts";
+import {addPostAC} from "../../../../store/action-creators/addPostAC";
 
 
 export const Profile: React.FC = () => {
+
+    const posts = useSelector(selectPosts)
+    const dispatch = useDispatch()
+
+    const addPost = (text: string) => {
+        dispatch(addPostAC(text))
+    }
+
     return (
         <StyledProfile>
             <ProfileContent>
                 <ProfileHeader/>
-                <PostWritingForm/>
-                <Post/>
-                <Post/>
-                <Post/>
+                <PostSendForm addItem={addPost}/>
+                {
+                    posts.map(p => <Post key={p.id} postText={p.postText}/>)
+                }
             </ProfileContent>
             <ProfileAside/>
         </StyledProfile>
