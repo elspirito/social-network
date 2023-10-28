@@ -13,8 +13,10 @@ export const Button: React.FC<PropsType> = ({name, onClick}) => {
 };
 
 const StyledButton = styled.button`
-  background: blue;
+  background-color: #1B79E5;
   border: 0;
   color: white;
-  padding: 8px;
+  padding: 8px 24px;
+  border-radius: 8px;
+  font-size: 16px;
 `

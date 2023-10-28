@@ -37,5 +37,10 @@ export const Input: React.FC<PropsType> = (
 };
 
 const StyledInput = styled.input`
-
+  width: 100%;
+  background-color: #F5F7FB;
+  border: 0;
+  height: 48px;
+  border-radius: 8px;
+  padding: 8px 16px;
 `

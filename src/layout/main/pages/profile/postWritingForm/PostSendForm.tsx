@@ -35,7 +35,9 @@ const StyledPostWritingForm = styled.div`
   background-color: #fff;
   border-radius: 12px;
   padding: 24px;
-
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
 `
 
 
