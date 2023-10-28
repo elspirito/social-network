@@ -1,8 +1,8 @@
-import {postsActionsTypes} from "../../types/posts";
+import {PostsActionsTypes} from "../../types/posts";
 
 export const addPostAC = (postText: string) => {
     return {
-        type: postsActionsTypes.ADD_POST,
+        type: PostsActionsTypes.ADD_POST,
         payload: {
             postText
         }

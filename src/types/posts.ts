@@ -1,6 +1,6 @@
 import {addPostAC} from "../store/action-creators/addPostAC";
 
-export enum postsActionsTypes {
+export enum PostsActionsTypes {
     ADD_POST  = 'ADD_POST'
 }
 
