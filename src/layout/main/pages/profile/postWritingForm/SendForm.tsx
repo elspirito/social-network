@@ -7,7 +7,7 @@ type PropsType = {
     addItem: (inputValue: string) => void
 }
 
-export const PostSendForm: React.FC<PropsType> = ({addItem}) => {
+export const SendForm: React.FC<PropsType> = ({addItem}) => {
 
     const [inputValue, setInputValue] = useState('')
 

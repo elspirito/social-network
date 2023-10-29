@@ -1,12 +1,14 @@
 import {combineReducers, createStore} from "redux";
-import {friendsReducer, postReducer} from "./reducers";
+import {dialogsReducer, friendsReducer, postsReducer} from "./reducers";
+
 
 
 
 export const rootReducer = combineReducers(
     {
         friendsReducer,
-        postReducer
+        postsReducer,
+        dialogsReducer
     }
 )
 export let store = createStore(rootReducer)

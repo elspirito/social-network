@@ -7,7 +7,7 @@ import {useSelector} from "react-redux";
 import {selectFriends} from "../../../../store/selectors";
 
 
-export const Dialogs: React.FC = () => {
+export const DialogsPage: React.FC = () => {
 
     const friends = useSelector(selectFriends)
 

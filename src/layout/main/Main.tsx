@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import {Profile} from "./pages/profile/Profile";
-import {Dialogs} from "./pages/dialogs/Dialogs";
+import {ProfilePage} from "./pages/profile/ProfilePage";
+import {DialogsPage} from "./pages/dialogs/DialogsPage";
 import {Navigate, Route, Routes} from "react-router-dom";
 
 
@@ -11,8 +11,8 @@ export const Main: React.FC = () => {
             <Routes>
                 <Route path={'/'} element={<Navigate to={'/profile'}/>}/>
 
-                <Route path={'/profile'} element={<Profile/>}/>
-                <Route path={'/dialogs'} element={<Dialogs/>}/>
+                <Route path={'/profile'} element={<ProfilePage/>}/>
+                <Route path={'/dialogs'} element={<DialogsPage/>}/>
 
             </Routes>
         </StyledMain>

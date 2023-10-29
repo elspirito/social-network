@@ -1,2 +1,3 @@
 export {friendsReducer} from '../reducers/friendsReducer'
-export {postReducer} from './postReducer'
+export {postsReducer} from './postsReducer'
+export {dialogsReducer} from './dialogsReducer'

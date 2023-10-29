@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 import {NavLink, Routes, Route} from "react-router-dom";
-import {Profile} from "../../main/pages/profile/Profile";
-import {Dialogs} from "../../main/pages/dialogs/Dialogs";
+import {ProfilePage} from "../../main/pages/profile/ProfilePage";
+import {DialogsPage} from "../../main/pages/dialogs/DialogsPage";
 
 let pages = [
     {id: 1, title: 'Profile', src: '#'},
