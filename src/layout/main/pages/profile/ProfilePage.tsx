@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {ProfileHeader} from "./profileHeader/ProfileHeader";
-import {SendForm} from "./postWritingForm/SendForm";
+import {SendForm} from "../../../../components/sendForm/SendForm";
 import {Post} from "./post/Post";
 import {ProfileAside} from "./profileAside/ProfileAside";
 import {useDispatch, useSelector} from "react-redux";

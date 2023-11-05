@@ -6,7 +6,7 @@ export enum PostsActionsTypes {
 
 type PostsACType = ReturnType<typeof postsAC>
 
-export type PostsRootType = PostsACType
+export type PostsRootActionsType = PostsACType
 
 export type PostType = {
     id: string

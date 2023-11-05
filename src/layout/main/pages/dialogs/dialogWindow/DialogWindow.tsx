@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {SendForm} from "../../profile/postWritingForm/SendForm";
+import {SendForm} from "../../../../../components/sendForm/SendForm";
 import {selectDialogs} from "../../../../../store/selectors";
 import {useDispatch, useSelector} from "react-redux";
 import {DialogMessage} from "../dialogMessage/DialogMessage";
