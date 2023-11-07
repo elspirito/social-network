@@ -1,19 +1,23 @@
 import React from 'react';
 import styled from "styled-components";
-import {ProfilePage} from "./pages/profile/ProfilePage";
-import {DialogsPage} from "./pages/dialogs/DialogsPage";
+import {ProfilePage} from "./pages/profilePage/ProfilePage";
+import {DialogsPage} from "./pages/dialogsPage/DialogsPage";
 import {Navigate, Route, Routes} from "react-router-dom";
+import {UsersPage} from "./pages/usersPage/UsersPage";
+import {NotFound} from "./pages/notFound/notFound";
 
 
 export const Main: React.FC = () => {
     return (
         <StyledMain>
             <Routes>
-                <Route path={'/'} element={<Navigate to={'/profile'}/>}/>
+                <Route path={'/'} element={<Navigate to={'/profilePage'}/>}/>
 
                 <Route path={'/profile'} element={<ProfilePage/>}/>
                 <Route path={'/dialogs'} element={<DialogsPage/>}/>
+                <Route path={'/users'} element={<UsersPage/>}/>
 
+                <Route path={'/*'} element={<NotFound/>}/>
             </Routes>
         </StyledMain>
     );
