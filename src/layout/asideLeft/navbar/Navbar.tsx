@@ -32,12 +32,23 @@ const StyledNavbar = styled.div`
   padding: 24px;
   border-radius: 12px;
   
+  
   & > ul {
     display: flex;
     flex-direction: column;
-    
+
     & > a {
-      padding: 8px 0;
+      text-decoration: none;
+      color: #1e3786;
+    }
+
+    & > a.active {
+      text-decoration: none;
+      color: #03eaff;
+    }
+
+    & > a:hover {
+      color: steelblue;
     }
   }
 `

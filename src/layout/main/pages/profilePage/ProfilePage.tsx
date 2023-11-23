@@ -6,7 +6,7 @@ import {Post} from "./post/Post";
 import {ProfileAside} from "./profileAside/ProfileAside";
 import {useDispatch, useSelector} from "react-redux";
 import {selectPosts} from "../../../../store/selectors/selectPosts";
-import {postsAC} from "../../../../store/action-creators/postsAC";
+import {addPostAC} from "../../../../store/actions/posts";
 
 
 export const ProfilePage: React.FC = () => {
@@ -15,7 +15,7 @@ export const ProfilePage: React.FC = () => {
     const dispatch = useDispatch()
 
     const addPost = (text: string) => {
-        dispatch(postsAC(text))
+        dispatch(addPostAC(text))
     }
 
     return (

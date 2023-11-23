@@ -1,4 +1,4 @@
-import {RootStateType} from "../index";
+import {AppStateType} from "../store";
 import {PostType} from "../../types/posts";
 
-export const selectPosts = (state: RootStateType): PostType[] => state.postsReducer;
+export const selectPosts = (state: AppStateType): PostType[] => state.postsReducer;

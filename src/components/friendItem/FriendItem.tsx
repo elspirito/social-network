@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import {UserPic} from '../userPic/UserPic';
 import avatar_0004 from '../../assets/img/avatars/avatar_0004.webp'
-import {Icon} from '../icon/Icon';
-import {Button} from "../button/Button";
 
 type FriendLinkPropsType = {
     firstName: string

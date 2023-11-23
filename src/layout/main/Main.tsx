@@ -11,7 +11,7 @@ export const Main: React.FC = () => {
     return (
         <StyledMain>
             <Routes>
-                <Route path={'/'} element={<Navigate to={'/profilePage'}/>}/>
+                <Route path={'/'} element={<Navigate to={'/profile'}/>}/>
 
                 <Route path={'/profile'} element={<ProfilePage/>}/>
                 <Route path={'/dialogs'} element={<DialogsPage/>}/>

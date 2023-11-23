@@ -1,10 +1,10 @@
-import {postsAC} from "../store/action-creators/postsAC";
+import {addPostAC} from "../store/actions/posts";
 
 export enum PostsActionsTypes {
     ADD_POST  = 'ADD_POST'
 }
 
-type PostsACType = ReturnType<typeof postsAC>
+type PostsACType = ReturnType<typeof addPostAC>
 
 export type PostsRootActionsType = PostsACType
 

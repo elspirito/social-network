@@ -1,4 +1,4 @@
 import {FriendType} from "../../types/friends";
-import {RootStateType} from "../index";
+import {AppStateType} from "../store";
 
-export const selectFriends = (state: RootStateType): FriendType[] => state.friendsReducer;
+export const selectFriends = (state: AppStateType): FriendType[] => state.friendsReducer;

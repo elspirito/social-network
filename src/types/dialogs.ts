@@ -1,4 +1,4 @@
-import {dialogsAC} from "../store/action-creators/dialogsAC";
+import {dialogsAC} from "../store/actions/dialogs";
 
 export enum DialogsActionsTypes {
     SEND_MESSAGE  = 'SEND_MESSAGE'

@@ -1,4 +1,4 @@
-import {RootStateType} from "../index";
+import {AppStateType} from "../store";
 import {DialogType} from "../../types/dialogs";
 
-export const selectDialogs = (state: RootStateType): DialogType[] => state.dialogsReducer;
+export const selectDialogs = (state: AppStateType): DialogType[] => state.dialogsReducer;

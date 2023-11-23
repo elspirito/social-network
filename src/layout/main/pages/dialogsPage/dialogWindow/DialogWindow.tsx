@@ -4,7 +4,7 @@ import {SendForm} from "../../../../../components/sendForm/SendForm";
 import {selectDialogs} from "../../../../../store/selectors";
 import {useDispatch, useSelector} from "react-redux";
 import {DialogMessage} from "../dialogMessage/DialogMessage";
-import {dialogsAC} from "../../../../../store/action-creators/dialogsAC";
+import {dialogsAC} from "../../../../../store/actions/dialogs";
 
 
 export const DialogWindow: React.FC = () => {
