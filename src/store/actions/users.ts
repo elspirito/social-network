@@ -1,6 +1,7 @@
 import {UsersActionsTypes, UserType} from "../../types/users";
 import {Dispatch} from "redux";
 import {usersAPI} from "../../api/users-api";
+import {AppThunk} from "../store";
 
 export const fetchUsersAC = (users: UserType[]) => {
     return {
@@ -8,7 +9,7 @@ export const fetchUsersAC = (users: UserType[]) => {
         users
     }
 }
-export const fetchUsersTC = () => (dispatch: Dispatch) => {
+export const fetchUsersTC = ():AppThunk => (dispatch) => {
     usersAPI.fetchUsers()
         .then(res => {
             dispatch(fetchUsersAC(res.data.items))
