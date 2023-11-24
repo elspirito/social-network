@@ -4,6 +4,7 @@ import {setUsersTC} from "../../../../store/actions/users";
 import {selectUsers, selectUsersCurrentPage, selectUsersPagesCount} from "../../../../store/selectors/selectUsers";
 import {useAppDispatch, useAppSelector} from "../../../../hooks/customHooks";
 import {Pagination} from "../../../../components/pagination/Pagination";
+import {UserItem} from "../../../../components/userItem/UserItem";
 
 export const UsersPage = () => {
     const dispatch = useAppDispatch()
@@ -20,15 +21,18 @@ export const UsersPage = () => {
         <StyledUserPage>
             <Pagination pagesCount={usersPagesCount} currentPage={usersCurrentPage}/>
             {
-                users.map(u => {
-                    return <div key={u.id}>
-                        <span>Name: {u.name}</span>
-                        <span>Status: {u.status}</span>
-                        <span>Followed: {u.followed}</span>
-                        <img src={u.photos.small}/>
-                        <span>Url Name: {u.uniqueUrlName}</span>
-                    </div>
-                })
+                users.map(u => <UserItem key={u.id}
+                                         user={u}
+                    />
+
+                    // return <div key={u.id}>
+                    //     <span>Name: {u.name}</span>
+                    //     <span>Status: {u.status}</span>
+                    //     <span>Followed: {u.followed}</span>
+                    //     <img src={u.photos.small}/>
+                    //     <span>Url Name: {u.uniqueUrlName}</span>
+                    // </div>
+                )
             }
         </StyledUserPage>
     );
