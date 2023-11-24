@@ -1,4 +1,6 @@
 import {AppStateType} from "../store";
-import {UserType} from "../../types/users";
 
-export const selectUsers = (state: AppStateType): UserType[] => state.usersReducer;
+export const selectUsers = (state: AppStateType) => state.usersReducer.users;
+export const selectUsersCurrentPage = (state: AppStateType) => state.usersReducer.currentPage;
+export const selectUsersPagesCount = (state: AppStateType) =>
+    Math.ceil(state.usersReducer.totalUsersCount/state.usersReducer.pageSize)

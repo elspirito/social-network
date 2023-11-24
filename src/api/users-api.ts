@@ -11,7 +11,7 @@ const axiosInstance = axios.create({
 })
 
 export const usersAPI = {
-    fetchUsers() {
-        return axiosInstance.get<GetUsersResponseType>('/users')
+    fetchUsers(currentPage: number) {
+        return axiosInstance.get<GetUsersResponseType>(`/users?page=${currentPage}&count=20`)
     }
 }

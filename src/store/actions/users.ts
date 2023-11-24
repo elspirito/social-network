@@ -1,17 +1,24 @@
 import {UsersActionsTypes, UserType} from "../../types/users";
-import {Dispatch} from "redux";
 import {usersAPI} from "../../api/users-api";
 import {AppThunk} from "../store";
 
-export const fetchUsersAC = (users: UserType[]) => {
+export const setUsersAC = (users: UserType[], totalUserCount: number) => {
     return {
-        type: UsersActionsTypes.GET_USERS,
-        users
-    }
+        type: UsersActionsTypes.SET_USERS,
+        users,
+        totalUserCount
+    } as const
 }
-export const fetchUsersTC = ():AppThunk => (dispatch) => {
-    usersAPI.fetchUsers()
+export const setCurrentPageAC = (currentPage: number) => {
+    return {
+        type: UsersActionsTypes.SET_CURRENT_PAGE,
+        currentPage
+    } as const
+}
+export const setUsersTC = (currentPage: number):AppThunk => (dispatch) => {
+    usersAPI.fetchUsers(currentPage)
         .then(res => {
-            dispatch(fetchUsersAC(res.data.items))
+            dispatch(setUsersAC(res.data.items, res.data.totalCount))
+            dispatch(setCurrentPageAC(currentPage))
         })
 }

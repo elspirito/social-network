@@ -1,12 +1,14 @@
-import {fetchUsersAC} from "../store/actions/users";
+import {setCurrentPageAC, setUsersAC} from "../store/actions/users";
 
 export enum UsersActionsTypes {
-    GET_USERS = 'GET_USERS'
+    SET_USERS = 'SET_USERS',
+    SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
 }
 
-type UsersACType = ReturnType<typeof fetchUsersAC>
+type SetUsersACType = ReturnType<typeof setUsersAC>
+type SetCurrentPageACType = ReturnType<typeof setCurrentPageAC>
 
-export type UsersRootActionsType = UsersACType
+export type UsersRootActionsType = SetUsersACType | SetCurrentPageACType
 
 type UserPhotosType = {
     small: string,
@@ -19,6 +21,12 @@ export type UserType = {
     photos: UserPhotosType,
     status: string,
     followed: boolean
+}
+export type UsersStateType = {
+    users: UserType[]
+    pageSize: number
+    totalUsersCount: number
+    currentPage: number
 }
 export type GetUsersResponseType = {
     error: string | null
