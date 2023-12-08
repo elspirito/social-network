@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import styled, {css} from "styled-components";
 import {useAppDispatch} from "../../hooks/customHooks";
-import {setCurrentPageAC, setUsersTC} from "../../store/actions/users";
+import {setUsersTC} from "../../store/actions/users";
 
 type PropsType = {
     pagesCount: number

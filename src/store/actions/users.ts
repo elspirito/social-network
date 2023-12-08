@@ -15,10 +15,19 @@ export const setCurrentPageAC = (currentPage: number) => {
         currentPage
     } as const
 }
-export const setUsersTC = (currentPage: number):AppThunk => (dispatch) => {
+
+export const setLoadingStatusAC = (status: boolean) => {
+    return {
+        type: UsersActionsTypes.SET_LOADING_STATUS,
+        status
+    } as const
+}
+export const setUsersTC = (currentPage: number): AppThunk => (dispatch) => {
+    dispatch(setLoadingStatusAC(true))
     usersAPI.fetchUsers(currentPage)
         .then(res => {
             dispatch(setUsersAC(res.data.items, res.data.totalCount))
             dispatch(setCurrentPageAC(currentPage))
+            dispatch(setLoadingStatusAC(false))
         })
 }
