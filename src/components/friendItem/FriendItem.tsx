@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {UserPic} from '../userPic/UserPic';
 import avatar_0004 from '../../assets/img/avatars/avatar_0004.webp'
+import Avatar from "antd/lib/avatar/avatar";
 
 type FriendLinkPropsType = {
     firstName: string
@@ -18,12 +18,11 @@ export const FriendItem: React.FC<FriendLinkPropsType> = ({
                                                               isOnline,
                                                               icon
                                                           }) => {
-    console.log(icon)
     return (
         <StyledFriendItem>
             <FriendUserPic>
                 <Badge className={isOnline ? 'online' : 'offline'}/>
-                <UserPic src={avatar_0004}/>
+                <Avatar src={avatar_0004}/>
             </FriendUserPic>
             <FullName>
                 <UserName>

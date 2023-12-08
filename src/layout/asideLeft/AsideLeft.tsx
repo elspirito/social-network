@@ -18,6 +18,5 @@ const StyledAsideLeft = styled.aside`
   flex-direction: column;
   gap: 24px;
   padding-left: 24px;
-  position: fixed;
   top: 124px;
 `

@@ -1,7 +1,7 @@
 import React, {ReactNode} from 'react';
 import styled from "styled-components";
-import {UserPic} from "../../../../../components/userPic/UserPic";
 import pic from '../../../../../assets/img/avatars/avatar_0004.webp'
+import Avatar from "antd/lib/avatar/avatar";
 
 type PropsType = {
     dialogText: string
@@ -11,7 +11,7 @@ type PropsType = {
 export const DialogMessage: React.FC<PropsType> = ({dialogText,children}) => {
     return (
         <StyledDialogMessage>
-            <UserPic src={pic}/>
+            <Avatar src={pic}/>
             {dialogText}
         </StyledDialogMessage>
     );

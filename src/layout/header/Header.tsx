@@ -22,5 +22,6 @@ const StyledHeader = styled.header`
   align-items: center;
   border-bottom: 1px solid #ebedf0;
   position: fixed;
+  z-index: 9999;
   width: 100%;
 `

@@ -1,7 +1,6 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
 import {UserType} from "../../types/users";
-import {UserPic} from "../userPic/UserPic";
 import Avatar from "antd/lib/avatar/avatar";
 
 type PropsType = {
@@ -11,7 +10,6 @@ type PropsType = {
 export const UserItem: FC<PropsType> = ({user}) => {
     return (
         <StyledUserItem>
-            {/*<UserPic src={user.photos.small}/>*/}
             <Avatar icon={`${user.name[0].toUpperCase()}`} size={"large"} src={user.photos.small} />
             <div>
                 <div>{user.name}</div>

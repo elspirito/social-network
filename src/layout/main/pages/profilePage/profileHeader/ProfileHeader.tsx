@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from "styled-components";
 import headerImg from '../../../../../assets/img/profileHeaderImg.png'
-import {UserPic} from "../../../../../components/userPic/UserPic";
 import avatar_0004 from '../../../../../assets/img/avatars/avatar_0004.webp'
+import Avatar from "antd/lib/avatar/avatar";
 
 export const ProfileHeader = () => {
     return (
         <StyledProfileHeader>
             <ProfileHeadImg src={headerImg}/>
-            <UserPic src={avatar_0004} borderRadius={'12px'}/>
+            <Avatar src={avatar_0004}/>
         </StyledProfileHeader>
     );
 };

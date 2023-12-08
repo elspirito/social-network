@@ -1,5 +1,4 @@
-import React, {ReactNode} from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import App from './App';
 import {GlobalStyle} from "./styles/Global.styled";
 import {BrowserRouter} from "react-router-dom";
