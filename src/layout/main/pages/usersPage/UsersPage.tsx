@@ -2,6 +2,7 @@ import React, {FC, useEffect} from 'react';
 import styled from "styled-components";
 import {setUsersTC} from "../../../../store/actions/users";
 import {
+    selectPageSize,
     selectUserIsLoadingStatus,
     selectUsers,
     selectUsersCurrentPage,
@@ -16,21 +17,24 @@ export const UsersPage: FC = () => {
 
     const users = useAppSelector(selectUsers)
     const usersPagesCount = useAppSelector(selectUsersPagesCount)
+    const pageSize = useAppSelector(selectPageSize)
     const usersCurrentPage = useAppSelector(selectUsersCurrentPage)
     const userIsLoadingStatus = useAppSelector(selectUserIsLoadingStatus)
 
     useEffect(() => {
-        dispatch(setUsersTC(usersCurrentPage))
+        dispatch(setUsersTC(usersCurrentPage, pageSize))
     }, []);
 
-    const onChangePaginationHandler = (usersCurrentPage: number) =>{
-        dispatch(setUsersTC(usersCurrentPage))
+    const onChangePaginationHandler = (usersCurrentPage: number, pageSize: number) => {
+        dispatch(setUsersTC(usersCurrentPage, pageSize))
     }
+
 
     return (
         <StyledUsersPage>
-            {/*<Pagination pagesCount={usersPagesCount} currentPage={usersCurrentPage}/>*/}
-            <Pagination defaultCurrent={usersCurrentPage} total={usersPagesCount} onChange={onChangePaginationHandler}/>
+            <Pagination defaultCurrent={usersCurrentPage}
+                        total={usersPagesCount}
+                        onChange={onChangePaginationHandler}/>
             {
                 userIsLoadingStatus
                     ? <Spin style={{padding: '100px'}}/>

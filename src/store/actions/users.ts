@@ -2,11 +2,12 @@ import {UsersActionsTypes, UserType} from "../../types/users";
 import {usersAPI} from "../../api/users-api";
 import {AppThunk} from "../store";
 
-export const setUsersAC = (users: UserType[], totalUserCount: number) => {
+export const setUsersAC = (users: UserType[], totalUserCount: number, pageSize: number) => {
     return {
         type: UsersActionsTypes.SET_USERS,
         users,
-        totalUserCount
+        totalUserCount,
+        pageSize
     } as const
 }
 export const setCurrentPageAC = (currentPage: number) => {
@@ -22,11 +23,11 @@ export const setLoadingStatusAC = (status: boolean) => {
         status
     } as const
 }
-export const setUsersTC = (currentPage: number): AppThunk => (dispatch) => {
+export const setUsersTC = (currentPage: number, pageSize: number): AppThunk => (dispatch) => {
     dispatch(setLoadingStatusAC(true))
-    usersAPI.fetchUsers(currentPage)
+    usersAPI.fetchUsers(currentPage, pageSize)
         .then(res => {
-            dispatch(setUsersAC(res.data.items, res.data.totalCount))
+            dispatch(setUsersAC(res.data.items, res.data.totalCount, pageSize))
             dispatch(setCurrentPageAC(currentPage))
             dispatch(setLoadingStatusAC(false))
         })

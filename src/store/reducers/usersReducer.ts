@@ -2,7 +2,7 @@ import {UsersActionsTypes, UsersRootActionsType, UsersStateType} from "../../typ
 
 const initState: UsersStateType = {
     users: [],
-    pageSize: 20,
+    pageSize: 10,
     totalUsersCount: 0,
     currentPage: 1,
     isLoading: false
