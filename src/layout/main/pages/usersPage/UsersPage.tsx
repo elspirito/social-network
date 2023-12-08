@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {FC, useEffect} from 'react';
 import styled from "styled-components";
 import {setUsersTC} from "../../../../store/actions/users";
 import {
@@ -8,11 +8,10 @@ import {
     selectUsersPagesCount
 } from "../../../../store/selectors/selectUsers";
 import {useAppDispatch, useAppSelector} from "../../../../hooks/customHooks";
-import {Pagination} from "../../../../components/pagination/Pagination";
 import {UserItem} from "../../../../components/userItem/UserItem";
-import {Spin} from "antd";
+import {Pagination, Spin} from "antd";
 
-export const UsersPage = () => {
+export const UsersPage: FC = () => {
     const dispatch = useAppDispatch()
 
     const users = useAppSelector(selectUsers)
@@ -24,18 +23,23 @@ export const UsersPage = () => {
         dispatch(setUsersTC(usersCurrentPage))
     }, []);
 
+    const onChangePaginationHandler = (usersCurrentPage: number) =>{
+        dispatch(setUsersTC(usersCurrentPage))
+    }
+
     return (
         <StyledUsersPage>
-                <Pagination pagesCount={usersPagesCount} currentPage={usersCurrentPage}/>
-                {
-                    userIsLoadingStatus
-                        ? <Spin style={{padding: '100px'}}/>
-                        : users.map(
+            {/*<Pagination pagesCount={usersPagesCount} currentPage={usersCurrentPage}/>*/}
+            <Pagination defaultCurrent={usersCurrentPage} total={usersPagesCount} onChange={onChangePaginationHandler}/>
+            {
+                userIsLoadingStatus
+                    ? <Spin style={{padding: '100px'}}/>
+                    : users.map(
                         user =>
                             <UserItem key={user.id} user={user}/>
                     )
-                }
-            </StyledUsersPage>
+            }
+        </StyledUsersPage>
     );
 };
 
