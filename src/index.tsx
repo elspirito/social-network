@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import {GlobalStyle} from "./styles/Global.styled";
@@ -7,7 +7,11 @@ import {Provider} from "react-redux";
 import {store} from "./store/store";
 
 
-ReactDOM.render(
+import {createRoot} from 'react-dom/client';
+
+const container = document.getElementById('root');
+const root = createRoot(container!); // createRoot(container!) if you use TypeScript
+root.render(
     <React.StrictMode>
         <GlobalStyle/>
         <BrowserRouter>
@@ -15,6 +19,5 @@ ReactDOM.render(
                 <App/>
             </Provider>
         </BrowserRouter>
-    </React.StrictMode>,
-    document.getElementById('root')
+    </React.StrictMode>
 );

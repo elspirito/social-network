@@ -6,7 +6,7 @@ import {Layout} from "./components/Layout";
 
 
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <Layout>
         <Header/>
