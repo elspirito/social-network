@@ -1,18 +1,22 @@
-import {setCurrentPageAC, setLoadingStatusAC, setUsersAC} from "../store/actions/users";
+import {followUserAC, setCurrentPageAC, setLoadingStatusAC, setUsersAC} from "../store/actions/users";
 
 export enum UsersActionsTypes {
     SET_USERS = 'SET_USERS',
     SET_CURRENT_PAGE = 'SET_CURRENT_PAGE',
-    SET_LOADING_STATUS = 'SET_LOADING_STATUS'
+    SET_LOADING_STATUS = 'SET_LOADING_STATUS',
+    FOLLOW_USER = 'FOLLOW_USER',
 }
 
 type SetUsersACType = ReturnType<typeof setUsersAC>
 type SetCurrentPageACType = ReturnType<typeof setCurrentPageAC>
 type SetLoadingStatusACType = ReturnType<typeof setLoadingStatusAC>
+type FollowUseerACType = ReturnType<typeof followUserAC>
 
 export type UsersRootActionsType = SetUsersACType
     | SetCurrentPageACType
     | SetLoadingStatusACType
+    | FollowUseerACType
+
 
 type UserPhotosType = {
     small: string,

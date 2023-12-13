@@ -26,6 +26,11 @@ export const usersReducer = (state = initState, action: UsersRootActionsType) =>
                 ...state,
                 isLoading: action.status
             }
+        case UsersActionsTypes.FOLLOW_USER:
+            return {
+                ...state,
+                users: state.users.map(u=>u.id === action.userId ? {...u, followed: !u.followed}: u)
+            }
         default:
             return state
     }
