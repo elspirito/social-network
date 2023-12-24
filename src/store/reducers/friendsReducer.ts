@@ -1,5 +1,5 @@
 import { v1 } from 'uuid'
-import avatar_0004 from '../../assets/img/avatars/avatar_0004.webp'
+import avatar_0004 from '../../common/assets/img/avatars/avatar_0004.webp'
 import { FriendType } from '../../types/friends'
 
 const initState: FriendType[] = [

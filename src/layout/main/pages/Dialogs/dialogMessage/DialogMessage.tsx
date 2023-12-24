@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import pic from '../../../../../assets/img/avatars/avatar_0004.webp'
+import pic from '../../../../../common/assets/img/avatars/avatar_0004.webp'
 import Avatar from 'antd/lib/avatar/avatar'
 
 type PropsType = {
