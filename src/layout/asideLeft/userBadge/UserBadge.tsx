@@ -1,12 +1,8 @@
 import React from 'react';
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const UserBadge = () => {
-    return (
-        <StyledUserBadge>
-            UserBadge
-        </StyledUserBadge>
-    );
+  return <StyledUserBadge>UserBadge</StyledUserBadge>;
 };
 
 const StyledUserBadge = styled.div`
@@ -14,4 +10,4 @@ const StyledUserBadge = styled.div`
   padding: 24px;
   border-radius: 12px;
   width: 100%;
-`
+`;

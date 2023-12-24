@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import {UserButton} from './userButton/UserButton';
+import { UserButton } from './userButton/UserButton';
 
 export const UserControls = () => {
-    return (
-        <StyledUserControls>
-            <button>1</button>
-            <button>2</button>
-            <UserButton/>
-        </StyledUserControls>
-    );
+  return (
+    <StyledUserControls>
+      <button>1</button>
+      <button>2</button>
+      <UserButton />
+    </StyledUserControls>
+  );
 };
 
 const StyledUserControls = styled.div`
@@ -17,4 +17,4 @@ const StyledUserControls = styled.div`
   justify-content: flex-end;
   gap: 16px;
   margin: 24px;
-`
+`;

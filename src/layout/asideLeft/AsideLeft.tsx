@@ -1,15 +1,15 @@
 import React from 'react';
-import styled from "styled-components";
-import {UserBadge} from "./userBadge/UserBadge";
-import {Navbar} from "./navbar/Navbar";
+import styled from 'styled-components';
+import { UserBadge } from './userBadge/UserBadge';
+import { Navbar } from './navbar/Navbar';
 
 export const AsideLeft = () => {
-    return (
-        <StyledAsideLeft>
-            <UserBadge/>
-            <Navbar/>
-        </StyledAsideLeft>
-    );
+  return (
+    <StyledAsideLeft>
+      <UserBadge />
+      <Navbar />
+    </StyledAsideLeft>
+  );
 };
 
 const StyledAsideLeft = styled.aside`
@@ -19,4 +19,4 @@ const StyledAsideLeft = styled.aside`
   gap: 24px;
   padding-left: 24px;
   top: 124px;
-`
+`;
