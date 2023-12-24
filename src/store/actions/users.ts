@@ -1,6 +1,8 @@
 import { UsersActionsTypes, UserType } from '../../types/users'
 import { usersAPI } from '../../api/users-api'
 import { AppThunk } from '../store'
+import { PostsActionsTypes } from '../../types/posts'
+import { Dispatch } from 'redux';
 
 // Actions
 export const setUsersAC = (users: UserType[], totalUserCount: number, pageSize: number) => {
@@ -29,11 +31,19 @@ export const followUserAC = (userId: number) => {
     userId,
   } as const
 }
+export const getUserProfileAC = (userId: number) => {
+  return {
+    type: PostsActionsTypes.GET_USER_PROFILE,
+    payload: {
+      userId,
+    },
+  }
+}
 
 //Thunks
 export const setUsersTC =
   (currentPage: number, pageSize: number): AppThunk =>
-  (dispatch) => {
+  (dispatch: Dispatch) => {
     dispatch(setLoadingStatusAC(true))
     usersAPI.fetchUsers(currentPage, pageSize).then((res) => {
       dispatch(setUsersAC(res.data.items, res.data.totalCount, pageSize))
@@ -41,3 +51,6 @@ export const setUsersTC =
       dispatch(setLoadingStatusAC(false))
     })
   }
+export const getUserProfileTC = (userId: number):AppThunk => (dispatch: Dispatch) => {
+  alert(userId)
+}

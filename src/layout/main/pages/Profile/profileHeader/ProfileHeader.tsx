@@ -8,7 +8,7 @@ export const ProfileHeader = () => {
   return (
     <StyledProfileHeader>
       <ProfileHeadImg src={headerImg} />
-      <Avatar src={avatar_0004} />
+      <Avatar src={avatar_0004} size={'large'} />
     </StyledProfileHeader>
   )
 }

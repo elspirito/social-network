@@ -1,4 +1,10 @@
-import { followUserAC, setCurrentPageAC, setLoadingStatusAC, setUsersAC } from '../store/actions/users'
+import {
+  followUserAC,
+  getUserProfileAC,
+  setCurrentPageAC,
+  setLoadingStatusAC,
+  setUsersAC
+} from '../store/actions/users';
 
 export enum UsersActionsTypes {
   SET_USERS = 'SET_USERS',
@@ -11,8 +17,13 @@ type SetUsersACType = ReturnType<typeof setUsersAC>
 type SetCurrentPageACType = ReturnType<typeof setCurrentPageAC>
 type SetLoadingStatusACType = ReturnType<typeof setLoadingStatusAC>
 type FollowUseerACType = ReturnType<typeof followUserAC>
+type GetUserProfileACType = ReturnType<typeof getUserProfileAC>
 
-export type UsersRootActionsType = SetUsersACType | SetCurrentPageACType | SetLoadingStatusACType | FollowUseerACType
+export type UsersRootActionsType = SetUsersACType
+  | SetCurrentPageACType
+  | SetLoadingStatusACType
+  | FollowUseerACType
+  | GetUserProfileACType
 
 type UserPhotosType = {
   small: string

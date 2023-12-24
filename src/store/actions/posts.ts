@@ -5,6 +5,6 @@ export const addPostAC = (postText: string) => {
     type: PostsActionsTypes.ADD_POST,
     payload: {
       postText,
-    },
+    } as const,
   }
 }

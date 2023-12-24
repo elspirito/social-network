@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ProfilePage } from './pages/profilePage/ProfilePage'
-import { DialogsPage } from './pages/dialogsPage/DialogsPage'
+import { ProfilePage } from './pages/Profile/ProfilePage'
+import { DialogsPage } from './pages/Dialogs/DialogsPage'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { UsersPage } from './pages/usersPage/UsersPage'
+import { UsersPage } from './pages/Users/UsersPage'
 import { NotFound } from './pages/notFound/notFound'
 
 export const Main: React.FC = () => {

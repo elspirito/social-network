@@ -18,24 +18,25 @@ export const UserItem: FC<PropsType> = ({ user }) => {
   }
 
   return (
-    <StyledUserItem>
-      <NavLink to={`/profile:${user.id}`}>
-        <Avatar icon={`${user.name[0].toUpperCase()}`} size={'large'} src={user.photos.small} />
-        <UserName>
-          <h5>{user.name}</h5>
-          <Status>{user.status}</Status>
-        </UserName>
+    <>
+      <NavLink to={`/profile/${user.id}`}>
+        <UserBody>
+          <Avatar icon={`${user.name[0].toUpperCase()}`} size={'large'} src={user.photos.small} />
+          <UserName>
+            <h5>{user.name}</h5>
+            <Status>{user.status}</Status>
+          </UserName>
+        </UserBody>
       </NavLink>
 
       <button onClick={() => onClickHandler(user.id)}>{user.followed ? 'Unfollow' : 'Follow'}</button>
-
-      <span>Url Name: {user.uniqueUrlName}</span>
-    </StyledUserItem>
+    </>
   )
 }
 
-const StyledUserItem = styled.div`
+const UserBody = styled.div`
   display: flex;
+  flex-direction: row;
   gap: 8px;
   align-items: center;
   border-bottom: 1px solid #eee;
@@ -46,4 +47,5 @@ const Status = styled.small`
 `
 const UserName = styled.div`
   display: flex;
+  flex-direction: column;
 `
