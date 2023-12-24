@@ -1,12 +1,12 @@
-import React from 'react';
-import svgSprite from '../../assets/img/svgSprite.svg';
+import React from 'react'
+import svgSprite from '../../assets/img/svgSprite.svg'
 
 type IconPropsType = {
-  iconId: string;
-  width?: string;
-  height?: string;
-  viewBox?: string;
-};
+  iconId: string
+  width?: string
+  height?: string
+  viewBox?: string
+}
 
 export const Icon: React.FC<IconPropsType> = (props) => {
   return (
@@ -19,5 +19,5 @@ export const Icon: React.FC<IconPropsType> = (props) => {
     >
       <use xlinkHref={`${svgSprite}#${props.iconId}`} />
     </svg>
-  );
-};
+  )
+}

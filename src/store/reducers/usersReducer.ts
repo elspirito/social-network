@@ -1,4 +1,4 @@
-import { UsersActionsTypes, UsersRootActionsType, UsersStateType } from '../../types/users';
+import { UsersActionsTypes, UsersRootActionsType, UsersStateType } from '../../types/users'
 
 const initState: UsersStateType = {
   users: [],
@@ -6,7 +6,7 @@ const initState: UsersStateType = {
   totalUsersCount: 0,
   currentPage: 1,
   isLoading: false,
-};
+}
 
 export const usersReducer = (state = initState, action: UsersRootActionsType) => {
   switch (action.type) {
@@ -15,23 +15,23 @@ export const usersReducer = (state = initState, action: UsersRootActionsType) =>
         ...state,
         users: action.users,
         totalUsersCount: action.totalUserCount,
-      };
+      }
     case UsersActionsTypes.SET_CURRENT_PAGE:
       return {
         ...state,
         currentPage: action.currentPage,
-      };
+      }
     case UsersActionsTypes.SET_LOADING_STATUS:
       return {
         ...state,
         isLoading: action.status,
-      };
+      }
     case UsersActionsTypes.FOLLOW_USER:
       return {
         ...state,
         users: state.users.map((u) => (u.id === action.userId ? { ...u, followed: !u.followed } : u)),
-      };
+      }
     default:
-      return state;
+      return state
   }
-};
+}

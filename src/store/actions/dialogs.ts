@@ -1,4 +1,4 @@
-import { DialogsActionsTypes } from '../../types/dialogs';
+import { DialogsActionsTypes } from '../../types/dialogs'
 
 export const dialogsAC = (dialogText: string) => {
   return {
@@ -6,5 +6,5 @@ export const dialogsAC = (dialogText: string) => {
     payload: {
       dialogText,
     },
-  };
-};
+  }
+}

@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { SendForm } from './SendForm';
+import type { Meta, StoryObj } from '@storybook/react'
+import { SendForm } from './SendForm'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<typeof SendForm> = {
@@ -15,10 +15,10 @@ const meta: Meta<typeof SendForm> = {
   argTypes: {
     // backgroundColor: { control: 'color' },
   },
-};
+}
 
-export default meta;
-type Story = StoryObj<typeof SendForm>;
+export default meta
+type Story = StoryObj<typeof SendForm>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
@@ -27,4 +27,4 @@ export const Primary: Story = {
     //     // label: 'Button',
     addItem: () => alert('123'),
   },
-};
+}

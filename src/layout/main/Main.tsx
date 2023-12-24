@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import { ProfilePage } from './pages/profilePage/ProfilePage';
-import { DialogsPage } from './pages/dialogsPage/DialogsPage';
-import { Navigate, Route, Routes } from 'react-router-dom';
-import { UsersPage } from './pages/usersPage/UsersPage';
-import { NotFound } from './pages/notFound/notFound';
+import React from 'react'
+import styled from 'styled-components'
+import { ProfilePage } from './pages/profilePage/ProfilePage'
+import { DialogsPage } from './pages/dialogsPage/DialogsPage'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import { UsersPage } from './pages/usersPage/UsersPage'
+import { NotFound } from './pages/notFound/notFound'
 
 export const Main: React.FC = () => {
   return (
@@ -19,8 +19,8 @@ export const Main: React.FC = () => {
         <Route path={'/*'} element={<NotFound />} />
       </Routes>
     </StyledMain>
-  );
-};
+  )
+}
 
 const StyledMain = styled.main`
   grid-area: m;
@@ -28,4 +28,4 @@ const StyledMain = styled.main`
   flex-direction: column;
   gap: 24px;
   padding-right: 24px;
-`;
+`

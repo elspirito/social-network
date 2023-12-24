@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import { DialogWindow } from './dialogWindow/DialogWindow';
-import { FriendItem } from '../../../../components/friendItem/FriendItem';
-import { Search } from '../../../../components/search/Search';
-import { useSelector } from 'react-redux';
-import { selectFriends } from '../../../../store/selectors';
+import React from 'react'
+import styled from 'styled-components'
+import { DialogWindow } from './dialogWindow/DialogWindow'
+import { FriendItem } from '../../../../components/friendItem/FriendItem'
+import { Search } from '../../../../components/search/Search'
+import { useSelector } from 'react-redux'
+import { selectFriends } from '../../../../store/selectors'
 
 export const DialogsPage: React.FC = () => {
-  const friends = useSelector(selectFriends);
+  const friends = useSelector(selectFriends)
 
   return (
     <StyledDialogs>
@@ -22,21 +22,21 @@ export const DialogsPage: React.FC = () => {
               login={f.login}
               isOnline={f.isOnline}
             />
-          );
+          )
         })}
       </DialogsList>
       <DialogWindow />
     </StyledDialogs>
-  );
-};
+  )
+}
 
 const StyledDialogs = styled.div`
   background: #fff;
   border-radius: 12px;
   display: flex;
   flex-direction: row;
-`;
+`
 const DialogsList = styled.div`
   border-right: 1px solid #eee;
   padding: 24px;
-`;
+`

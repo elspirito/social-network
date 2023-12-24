@@ -1,34 +1,34 @@
-import React, { ChangeEvent, ChangeEventHandler, useState } from 'react';
-import styled from 'styled-components';
-import { Button } from '../button/Button';
-import { Input } from '../input/Input';
+import React, { ChangeEvent, ChangeEventHandler, useState } from 'react'
+import styled from 'styled-components'
+import { Button } from '../button/Button'
+import { Input } from '../input/Input'
 
 type PropsType = {
-  addItem: (inputValue: string) => void;
-};
+  addItem: (inputValue: string) => void
+}
 
 export const SendForm: React.FC<PropsType> = ({ addItem }) => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState('')
 
   const onChangeHandler = (text: string) => {
-    setInputValue(text);
-  };
+    setInputValue(text)
+  }
   const onKeyDownHandler = () => {
-    addItem(inputValue);
-    setInputValue('');
-  };
+    addItem(inputValue)
+    setInputValue('')
+  }
   const onClickHandler = () => {
-    addItem(inputValue);
-    setInputValue('');
-  };
+    addItem(inputValue)
+    setInputValue('')
+  }
 
   return (
     <StyledPostWritingForm>
       <Input placeholder={'POST HERE'} onChange={onChangeHandler} value={inputValue} onKeyDown={onKeyDownHandler} />
       <Button name={'Отправить'} onClick={onClickHandler} />
     </StyledPostWritingForm>
-  );
-};
+  )
+}
 
 const StyledPostWritingForm = styled.div`
   background-color: #fff;
@@ -37,4 +37,4 @@ const StyledPostWritingForm = styled.div`
   display: flex;
   flex-direction: row;
   gap: 8px;
-`;
+`

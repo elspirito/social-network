@@ -1,8 +1,8 @@
-import React from 'react';
-import { Header } from './layout/header/Header';
-import { AsideLeft } from './layout/asideLeft/AsideLeft';
-import { Main } from '../src/layout/main/Main';
-import { Layout } from './components/Layout';
+import React from 'react'
+import { Header } from './layout/header/Header'
+import { AsideLeft } from './layout/asideLeft/AsideLeft'
+import { Main } from '../src/layout/main/Main'
+import { Layout } from './components/Layout'
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
       <AsideLeft />
       <Main />
     </Layout>
-  );
-};
+  )
+}
 
-export default App;
+export default App

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Layout = styled.div`
   display: grid;
@@ -8,4 +8,4 @@ export const Layout = styled.div`
   grid-template-areas:
     'h h h'
     'l m m';
-`;
+`

@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FriendItem } from '../../../../../../components/friendItem/FriendItem';
-import { useSelector } from 'react-redux';
-import { selectFriends } from '../../../../../../store/selectors';
+import React from 'react'
+import styled from 'styled-components'
+import { FriendItem } from '../../../../../../components/friendItem/FriendItem'
+import { useSelector } from 'react-redux'
+import { selectFriends } from '../../../../../../store/selectors'
 
 export const Friends: React.FC = () => {
-  const friends = useSelector(selectFriends);
+  const friends = useSelector(selectFriends)
 
   return (
     <StyledFriends>
@@ -21,12 +21,12 @@ export const Friends: React.FC = () => {
               isOnline={f.isOnline}
               icon={'sms'}
             />
-          );
+          )
         })}
       </ul>
     </StyledFriends>
-  );
-};
+  )
+}
 
 const StyledFriends = styled.div`
   background-color: #fff;
@@ -35,4 +35,4 @@ const StyledFriends = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
-`;
+`

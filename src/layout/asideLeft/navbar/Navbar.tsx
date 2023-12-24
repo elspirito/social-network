@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import { NavLink, Routes, Route } from 'react-router-dom';
-import { ProfilePage } from '../../main/pages/profilePage/ProfilePage';
-import { DialogsPage } from '../../main/pages/dialogsPage/DialogsPage';
+import React from 'react'
+import styled from 'styled-components'
+import { NavLink, Routes, Route } from 'react-router-dom'
+import { ProfilePage } from '../../main/pages/profilePage/ProfilePage'
+import { DialogsPage } from '../../main/pages/dialogsPage/DialogsPage'
 
 let pages = [
   { id: 1, title: 'Profile', src: '#' },
@@ -10,7 +10,7 @@ let pages = [
   { id: 3, title: 'Feed', src: '#' },
   { id: 4, title: 'Music', src: '#' },
   { id: 5, title: 'Settings', src: '#' },
-];
+]
 
 export const Navbar = () => {
   return (
@@ -22,8 +22,8 @@ export const Navbar = () => {
         <NavLink to={'/users'}>Пользователи</NavLink>
       </ul>
     </StyledNavbar>
-  );
-};
+  )
+}
 
 const StyledNavbar = styled.div`
   background-color: #fff;
@@ -48,4 +48,4 @@ const StyledNavbar = styled.div`
       color: steelblue;
     }
   }
-`;
+`

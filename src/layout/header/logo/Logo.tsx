@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Icon } from '../../../components/icon/Icon';
+import React from 'react'
+import styled from 'styled-components'
+import { Icon } from '../../../components/icon/Icon'
 
 export const Logo = () => {
   return (
@@ -11,8 +11,8 @@ export const Logo = () => {
 
       <span>WeShare</span>
     </StyledLogo>
-  );
-};
+  )
+}
 
 const StyledLogo = styled.a`
   display: flex;
@@ -30,11 +30,11 @@ const StyledLogo = styled.a`
   &:hover {
     color: red;
   }
-`;
+`
 const LogoSign = styled.div`
   padding: 12px;
   border-radius: 12px;
   background-color: #1b79e5;
   color: #fff;
   line-height: 0;
-`;
+`

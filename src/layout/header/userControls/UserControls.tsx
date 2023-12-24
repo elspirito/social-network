@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { UserButton } from './userButton/UserButton';
+import React from 'react'
+import styled from 'styled-components'
+import { UserButton } from './userButton/UserButton'
 
 export const UserControls = () => {
   return (
@@ -9,12 +9,12 @@ export const UserControls = () => {
       <button>2</button>
       <UserButton />
     </StyledUserControls>
-  );
-};
+  )
+}
 
 const StyledUserControls = styled.div`
   display: flex;
   justify-content: flex-end;
   gap: 16px;
   margin: 24px;
-`;
+`

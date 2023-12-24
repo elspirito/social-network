@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
-import avatar_0004 from '../../assets/img/avatars/avatar_0004.webp';
-import Avatar from 'antd/lib/avatar/avatar';
+import React from 'react'
+import styled from 'styled-components'
+import avatar_0004 from '../../assets/img/avatars/avatar_0004.webp'
+import Avatar from 'antd/lib/avatar/avatar'
 
 type FriendLinkPropsType = {
-  firstName: string;
-  lastName: string;
-  login: string;
-  isOnline: boolean;
-  icon?: string;
-};
+  firstName: string
+  lastName: string
+  login: string
+  isOnline: boolean
+  icon?: string
+}
 
 export const FriendItem: React.FC<FriendLinkPropsType> = ({ firstName, lastName, login, isOnline, icon }) => {
   return (
@@ -27,8 +27,8 @@ export const FriendItem: React.FC<FriendLinkPropsType> = ({ firstName, lastName,
       </FullName>
       {icon && <span className="material-symbols-outlined">{icon}</span>}
     </StyledFriendItem>
-  );
-};
+  )
+}
 
 const StyledFriendItem = styled.a`
   display: flex;
@@ -42,11 +42,11 @@ const StyledFriendItem = styled.a`
   &:hover {
     background-color: #f5f7fb;
   }
-`;
+`
 const FriendUserPic = styled.div`
   position: relative;
   flex-shrink: 0;
-`;
+`
 const Badge = styled.div`
   display: inline-block;
   position: absolute;
@@ -65,18 +65,18 @@ const Badge = styled.div`
   &.offline {
     visibility: hidden;
   }
-`;
+`
 const FullName = styled.div`
   width: 100%;
-`;
+`
 const UserName = styled.div`
   display: flex;
   flex-direction: row;
   gap: 4px;
-`;
-const FirstName = styled.span``;
-const LastName = styled.span``;
+`
+const FirstName = styled.span``
+const LastName = styled.span``
 const LoginName = styled.small`
   color: #ccc;
-`;
-const ChatLink = styled.a``;
+`
+const ChatLink = styled.a``

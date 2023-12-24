@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Logo } from '../header/logo/Logo';
-import { ContentHeader } from './contentHeader/ContentHeader';
-import { UserControls } from './userControls/UserControls';
+import React from 'react'
+import styled from 'styled-components'
+import { Logo } from '../header/logo/Logo'
+import { ContentHeader } from './contentHeader/ContentHeader'
+import { UserControls } from './userControls/UserControls'
 
 export const Header = () => {
   return (
@@ -11,8 +11,8 @@ export const Header = () => {
       <ContentHeader />
       <UserControls />
     </StyledHeader>
-  );
-};
+  )
+}
 
 const StyledHeader = styled.header`
   background-color: #fff;
@@ -24,4 +24,4 @@ const StyledHeader = styled.header`
   position: fixed;
   z-index: 9999;
   width: 100%;
-`;
+`

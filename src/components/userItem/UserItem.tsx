@@ -1,21 +1,21 @@
-import React, { FC } from 'react';
-import styled from 'styled-components';
-import { UserType } from '../../types/users';
-import Avatar from 'antd/lib/avatar/avatar';
-import { useAppDispatch } from '../../hooks/customHooks';
-import { followUserAC } from '../../store/actions/users';
-import { NavLink } from 'react-router-dom';
+import React, { FC } from 'react'
+import styled from 'styled-components'
+import { UserType } from '../../types/users'
+import Avatar from 'antd/lib/avatar/avatar'
+import { useAppDispatch } from '../../hooks/customHooks'
+import { followUserAC } from '../../store/actions/users'
+import { NavLink } from 'react-router-dom'
 
 type PropsType = {
-  user: UserType;
-};
+  user: UserType
+}
 
 export const UserItem: FC<PropsType> = ({ user }) => {
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
   const onClickHandler = (userId: number) => {
-    dispatch(followUserAC(userId));
-  };
+    dispatch(followUserAC(userId))
+  }
 
   return (
     <StyledUserItem>
@@ -31,8 +31,8 @@ export const UserItem: FC<PropsType> = ({ user }) => {
 
       <span>Url Name: {user.uniqueUrlName}</span>
     </StyledUserItem>
-  );
-};
+  )
+}
 
 const StyledUserItem = styled.div`
   display: flex;
@@ -40,10 +40,10 @@ const StyledUserItem = styled.div`
   align-items: center;
   border-bottom: 1px solid #eee;
   padding: 8px;
-`;
+`
 const Status = styled.small`
   color: #999;
-`;
+`
 const UserName = styled.div`
   display: flex;
-`;
+`
