@@ -2,14 +2,13 @@ import { addPostAC, setUserProfileAC } from 'features/profiles/model/profile.act
 
 export enum ProfileActionsTypes {
   ADD_POST = 'ADD_POST',
-  GET_USER_PROFILE = 'GET_USER_PROFILE',
   SET_USER_PROFILE = 'SET_USER_PROFILE',
 }
 
-type PostsACType = ReturnType<typeof addPostAC>
+type AddPostsACType = ReturnType<typeof addPostAC>
 type SetUserProfileACType = ReturnType<typeof setUserProfileAC>
 
-export type ProfileRootActionsType = PostsACType | SetUserProfileACType
+export type ProfileRootActionsType = AddPostsACType | SetUserProfileACType
 
 export type PostType = {
   id: string

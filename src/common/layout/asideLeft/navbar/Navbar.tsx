@@ -2,14 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
-let pages = [
-  { id: 1, title: 'Profile', src: '#' },
-  { id: 2, title: 'Messages', src: '#' },
-  { id: 3, title: 'Feed', src: '#' },
-  { id: 4, title: 'Music', src: '#' },
-  { id: 5, title: 'Settings', src: '#' },
-]
-
 export const Navbar = () => {
   return (
     <StyledNavbar>

@@ -10,7 +10,6 @@ export const addPostAC = (postText: string) => {
     },
   } as const
 }
-
 export const setUserProfileAC = (profile: UserProfile) => {
   return {
     type: ProfileActionsTypes.SET_USER_PROFILE,

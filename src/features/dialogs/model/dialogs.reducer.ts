@@ -1,5 +1,5 @@
 import { v1 } from 'uuid'
-import { DialogsActionsTypes, DialogsRootType, DialogType } from '../../../common/types/dialogs'
+import { DialogsActionsTypes, DialogsRootType, DialogType } from 'common/types/dialogs'
 
 const initState: DialogType[] = [
   { id: v1(), dialogText: 'haha' },

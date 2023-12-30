@@ -1,4 +1,4 @@
-import { UsersActionsTypes, UsersRootActionsType, UsersStateType } from '../../../common/types/users'
+import { UsersActionsTypes, UsersRootActionsType, UsersStateType } from 'common/types/users'
 
 const initState: UsersStateType = {
   users: [],

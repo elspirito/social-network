@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { GetUsersResponseType } from '../../../common/types/users'
+import { GetUsersResponseType } from 'common/types/users'
 
 const axiosInstance = axios.create({
   baseURL: 'https://social-network.samuraijs.com/api/1.0',
@@ -18,8 +18,8 @@ export const usersApi = {
   },
 }
 
-type ResponseType<T = {}> = {
-  resultCode: number
-  messages: string[]
-  data: T
-}
+// type ResponseType<T = {}> = {
+//   resultCode: number
+//   messages: string[]
+//   data: T
+// }

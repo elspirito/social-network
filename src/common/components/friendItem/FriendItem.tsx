@@ -79,4 +79,3 @@ const LastName = styled.span``
 const LoginName = styled.small`
   color: #ccc;
 `
-const ChatLink = styled.a``

@@ -1,7 +1,6 @@
-import { UsersActionsTypes, UserType } from '../../../common/types/users'
+import { UsersActionsTypes, UserType } from 'common/types/users'
 import { usersApi } from '../api/users.api'
-import { AppThunk } from '../../../app/store'
-import { ProfileActionsTypes } from 'common/types/profile'
+import { AppThunk } from 'app/store'
 import { Dispatch } from 'redux'
 
 // Actions
@@ -31,14 +30,6 @@ export const followUserAC = (userId: number) => {
     userId,
   } as const
 }
-export const getUserProfileAC = (userId: number) => {
-  return {
-    type: ProfileActionsTypes.GET_USER_PROFILE,
-    payload: {
-      userId,
-    },
-  }
-}
 
 //Thunks
 export const setUsersTC =
@@ -50,9 +41,4 @@ export const setUsersTC =
       dispatch(setCurrentPageAC(currentPage))
       dispatch(setLoadingStatusAC(false))
     })
-  }
-export const getUserProfileTC =
-  (userId: number): AppThunk =>
-  (dispatch: Dispatch) => {
-    // alert(userId)
   }
