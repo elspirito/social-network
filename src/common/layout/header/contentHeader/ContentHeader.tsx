@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { PageTitle } from './pageTitle/PageTitle'
-import { Search } from '../../../components/search/Search'
+import { Search } from '../../../components/Search/Search'
 
 export const ContentHeader = () => {
   return (

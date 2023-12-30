@@ -11,10 +11,15 @@ export const Button: React.FC<PropsType> = ({ name, onClick }) => {
 }
 
 const StyledButton = styled.button`
-  background-color: #1b79e5;
+  background-color: hsla(212, 90%, 56%, 1);
   border: 0;
   color: white;
   padding: 8px 24px;
   border-radius: 8px;
   font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: hsla(212, 90%, 48%, 1);
+  }
 `

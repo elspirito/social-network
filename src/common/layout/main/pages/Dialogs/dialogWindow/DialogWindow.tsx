@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SendForm } from '../../../../../components/sendForm/SendForm'
+import { SendForm } from '../../../../../components/SendForm/SendForm'
 import { useDispatch, useSelector } from 'react-redux'
 import { DialogMessage } from '../dialogMessage/DialogMessage'
 import { dialogsAC } from '../../../../../../features/dialogs/model/dialogs.actions'
-import { selectDialogs } from '../../../../../../features/dialogs/model/dialogs.selector';
+import { selectDialogs } from '../../../../../../features/dialogs/model/dialogs.selector'
 
 export const DialogWindow: React.FC = () => {
   const messages = useSelector(selectDialogs)

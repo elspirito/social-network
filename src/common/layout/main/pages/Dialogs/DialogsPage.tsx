@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { DialogWindow } from './dialogWindow/DialogWindow'
 import { FriendItem } from '../../../../components/friendItem/FriendItem'
-import { Search } from '../../../../components/search/Search'
+import { Search } from '../../../../components/Search/Search'
 import { useSelector } from 'react-redux'
-import { selectFriends } from '../../../../../features/users/model/friends.selector';
+import { selectFriends } from '../../../../../features/users/model/friends.selector'
 
 export const DialogsPage: React.FC = () => {
   const friends = useSelector(selectFriends)

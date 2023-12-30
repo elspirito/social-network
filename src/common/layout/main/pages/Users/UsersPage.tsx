@@ -5,12 +5,13 @@ import {
   selectPageSize,
   selectUserIsLoadingStatus,
   selectUsersCurrentPage,
-  selectUsersPagesCount, usersSelector
-} from '../../../../../features/users/model/users.selector';
+  selectUsersPagesCount,
+  usersSelector,
+} from '../../../../../features/users/model/users.selector'
 import { useAppDispatch, useAppSelector } from '../../../../hooks/customHooks'
 import { UserItem } from '../../../../components/userItem/UserItem'
 import { Pagination, Spin } from 'antd'
-import { UserType } from '../../../../types/users';
+import { UserType } from '../../../../types/users'
 
 export const UsersPage: FC = () => {
   const dispatch = useAppDispatch()
@@ -23,7 +24,7 @@ export const UsersPage: FC = () => {
 
   useEffect(() => {
     dispatch(setUsersTC(usersCurrentPage, pageSize))
-  }, [])
+  }, [dispatch, pageSize, usersCurrentPage])
 
   const onChangePaginationHandler = (usersCurrentPage: number, pageSize: number) => {
     dispatch(setUsersTC(usersCurrentPage, pageSize))

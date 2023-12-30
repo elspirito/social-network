@@ -1,14 +1,14 @@
 import { AnyAction, applyMiddleware, combineReducers, legacy_createStore } from 'redux'
 import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk'
-import { UsersRootActionsType } from '../common/types/users'
-import { friendsReducer } from '../features/users/model/friends.reducer';
-import { postsReducer } from '../features/dialogs/model/posts.reducer';
-import { dialogsReducer } from '../features/dialogs/model/dialogs.reducer';
-import { usersReducer } from '../features/users/model/users.reducer';
+import { UsersRootActionsType } from 'common/types/users'
+import { friendsReducer } from 'features/users/model/friends.reducer'
+import { dialogsReducer } from 'features/dialogs/model/dialogs.reducer'
+import { usersReducer } from 'features/users/model/users.reducer'
+import { profileReducer } from 'features/profiles/model/profile.reducer'
 
 export const rootReducer = combineReducers({
   friendsReducer,
-  postsReducer,
+  profileReducer,
   dialogsReducer,
   usersReducer,
 })

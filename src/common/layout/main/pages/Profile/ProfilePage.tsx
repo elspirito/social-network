@@ -1,32 +1,34 @@
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
-import { ProfileHeader } from './profileHeader/ProfileHeader';
-import { SendForm } from '../../../../components/sendForm/SendForm';
-import { Post } from './post/Post';
-import { ProfileAside } from './profileAside/ProfileAside';
-import { useSelector } from 'react-redux';
-import { getUserProfileTC } from '../../../../../features/users/model/users.actions';
-import { useAppDispatch } from '../../../../hooks/customHooks';
-import { selectPosts } from '../../../../../features/dialogs/model/posts.selector';
+import React, { useEffect } from 'react'
+import styled from 'styled-components'
+import { ProfileHeader } from './profileHeader/ProfileHeader'
+import { SendForm } from '../../../../components/SendForm/SendForm'
+import { Post } from './post/Post'
+import { ProfileAside } from './profileAside/ProfileAside'
+import { useSelector } from 'react-redux'
+import { getUserProfileTC } from '../../../../../features/users/model/users.actions'
+import { useAppDispatch } from '../../../../hooks/customHooks'
+import { selectPosts } from '../../../../../features/profiles/model/profile.selector'
+import { addPostAC, addPostTC } from 'features/profiles/model/profile.actions'
+import { PostType } from 'common/types/profile'
 
 export const ProfilePage: React.FC = () => {
   const posts = useSelector(selectPosts)
   const dispatch = useAppDispatch()
 
   const addPost = (text: string) => {
-    // dispatch(addPostAC(text))
+    dispatch(addPostTC(text))
   }
 
   useEffect(() => {
     dispatch(getUserProfileTC(2))
-  }, [])
+  }, [dispatch])
 
   return (
     <StyledProfile>
       <ProfileContent>
         <ProfileHeader />
         <SendForm addItem={addPost} />
-        {posts.map((p) => (
+        {posts.map((p: PostType) => (
           <Post key={p.id} postText={p.postText} />
         ))}
       </ProfileContent>

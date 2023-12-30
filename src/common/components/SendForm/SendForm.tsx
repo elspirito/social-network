@@ -1,7 +1,7 @@
-import React, { ChangeEvent, ChangeEventHandler, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Button } from '../button/Button'
-import { Input } from '../input/Input'
+import { Button } from '../Button/Button'
+import { Input } from '../Input/Input'
 
 type PropsType = {
   addItem: (inputValue: string) => void

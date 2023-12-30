@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { NavLink, Routes, Route } from 'react-router-dom'
-import { ProfilePage } from '../../main/pages/Profile/ProfilePage'
-import { DialogsPage } from '../../main/pages/Dialogs/DialogsPage'
+import { NavLink } from 'react-router-dom'
 
 let pages = [
   { id: 1, title: 'Profile', src: '#' },
@@ -16,7 +14,6 @@ export const Navbar = () => {
   return (
     <StyledNavbar>
       <ul>
-        {/*{pages.map(el => <li key={el.id}><NavLink href={'#'} icon={'tempLogo'} linkText={el.title}/></li>)}*/}
         <NavLink to={'/profile/:id'}>Моя страница</NavLink>
         <NavLink to={'/dialogs'}>Сообщения</NavLink>
         <NavLink to={'/users'}>Пользователи</NavLink>
