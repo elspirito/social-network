@@ -10,8 +10,6 @@ import { selectPosts, selectProfile } from 'features/profile/model/profile.selec
 import { addPostTC, setUserProfileTC } from 'features/profile/model/profile.actions'
 import { PostType } from 'common/types/messages'
 import { Spin } from 'antd'
-import { UserType } from 'common/types/users'
-import { UserItem } from 'common/components/UserItem/UserItem'
 import { selectUserIsLoadingStatus } from 'features/users/model/users.selector'
 
 export const ProfilePage: React.FC = () => {
@@ -28,7 +26,7 @@ export const ProfilePage: React.FC = () => {
 
   useEffect(() => {
     dispatch(setUserProfileTC(2))
-  }, [])
+  }, [dispatch])
 
   return (
     <StyledProfile>
