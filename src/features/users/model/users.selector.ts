@@ -1,4 +1,4 @@
-import { AppStateType } from '../../../app/store'
+import { AppStateType } from 'app/store'
 
 export const usersSelector = (state: AppStateType) => state.usersReducer.users
 export const selectUsersCurrentPage = (state: AppStateType) => state.usersReducer.currentPage

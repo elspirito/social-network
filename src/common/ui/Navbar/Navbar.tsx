@@ -6,7 +6,7 @@ export const Navbar = () => {
   return (
     <StyledNavbar>
       <ul>
-        <NavLink to={'/profile/:id'}>Моя страница</NavLink>
+        <NavLink to={'/profile'}>Моя страница</NavLink>
         <NavLink to={'/messages'}>Сообщения</NavLink>
         <NavLink to={'/users'}>Пользователи</NavLink>
       </ul>

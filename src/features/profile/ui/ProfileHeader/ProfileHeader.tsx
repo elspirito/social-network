@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { FC, useEffect } from 'react'
 import styled from 'styled-components'
 import headerImg from '../../../../assets/img/profileHeaderImg.png'
-import avatar_0004 from '../../../../assets/img/avatars/avatar_0004.webp'
 import Avatar from 'antd/lib/avatar/avatar'
+import { setUserProfileTC } from 'features/profile/model/profile.actions'
+import { UserProfile } from 'common/types/profile'
+import { selectUserIsLoadingStatus } from 'features/users/model/users.selector'
+import { useSelector } from 'react-redux'
 
-export const ProfileHeader = () => {
+type PropsType = {
+  avatar?: string
+  name: string | undefined
+}
+
+export const ProfileHeader: FC<PropsType> = ({ avatar, name }) => {
   return (
     <StyledProfileHeader>
       <ProfileHeadImg src={headerImg} />
-      <Avatar src={avatar_0004} size={'large'} />
+      <Avatar src={avatar} size={100} />
+      <h2>{name}</h2>
     </StyledProfileHeader>
   )
 }

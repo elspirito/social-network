@@ -6,29 +6,42 @@ import { Post } from 'features/profile/ui/Post/Post'
 import { ProfileAside } from 'features/profile/ui/ProfileAside/ProfileAside'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'common/hooks/customHooks'
-import { selectPosts } from 'features/profile/model/profile.selector'
+import { selectPosts, selectProfile } from 'features/profile/model/profile.selector'
 import { addPostTC, setUserProfileTC } from 'features/profile/model/profile.actions'
-import { PostType } from 'common/types/profile'
+import { PostType } from 'common/types/messages'
+import { Spin } from 'antd'
+import { UserType } from 'common/types/users'
+import { UserItem } from 'common/components/UserItem/UserItem'
+import { selectUserIsLoadingStatus } from 'features/users/model/users.selector'
 
 export const ProfilePage: React.FC = () => {
   const dispatch = useAppDispatch()
   const posts = useSelector(selectPosts)
+  const profile = useSelector(selectProfile)
+  const userIsLoadingStatus = useSelector(selectUserIsLoadingStatus)
+
+  console.log(profile)
 
   const addPost = (text: string) => {
     dispatch(addPostTC(text))
   }
 
-  // useEffect(() => {
-  //   dispatch(setUserProfileTC(2))
-  // }, [])
+  useEffect(() => {
+    dispatch(setUserProfileTC(2))
+  }, [])
 
   return (
     <StyledProfile>
-      <ProfileContent>
-        <ProfileHeader />
-        <SendForm addItem={addPost} />
-        {posts && posts.map((p: PostType) => <Post key={p.id} postText={p.postText} />)}
-      </ProfileContent>
+      {userIsLoadingStatus ? (
+        <Spin style={{ padding: '100px' }} />
+      ) : (
+        <ProfileContent>
+          <ProfileHeader name={profile?.fullName} avatar={profile?.photos.small} />
+          <SendForm addItem={addPost} />
+          {posts && posts.map((p: PostType) => <Post key={p.id} postText={p.messageText} />)}
+        </ProfileContent>
+      )}
+
       <ProfileAside />
     </StyledProfile>
   )

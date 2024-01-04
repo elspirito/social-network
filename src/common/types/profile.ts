@@ -10,11 +10,6 @@ type SetUserProfileACType = ReturnType<typeof setUserProfileAC>
 
 export type ProfileRootActionsType = AddPostsACType | SetUserProfileACType
 
-export type PostType = {
-  id: string
-  postText: string
-}
-
 export type UserProfile = {
   aboutMe: string
   contacts: UserProfileContacts

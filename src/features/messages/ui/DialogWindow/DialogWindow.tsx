@@ -3,21 +3,21 @@ import styled from 'styled-components'
 import { SendForm } from 'common/components/SendForm/SendForm'
 import { useDispatch, useSelector } from 'react-redux'
 import { DialogMessage } from 'features/messages/ui/DialogMessage/DialogMessage'
-import { dialogsAC } from 'features/messages/model/dialogs.actions'
-import { selectDialogs } from 'features/messages/model/dialogs.selector'
+import { sendMessageAC } from 'features/messages/model/messages.actions'
+import { selectMessages } from 'features/messages/model/messages.selector'
 
 export const DialogWindow: React.FC = () => {
-  const messages = useSelector(selectDialogs)
+  const messages = useSelector(selectMessages)
   const dispatch = useDispatch()
   const sendMessageHandler = (text: string) => {
-    dispatch(dialogsAC(text))
+    dispatch(sendMessageAC(text))
   }
 
   return (
     <StyledDialogWindow>
       <DialogScreen>
         {messages.map((m) => (
-          <DialogMessage dialogText={m.dialogText} key={m.id} />
+          <DialogMessage dialogText={m.messageText} key={m.id} />
         ))}
       </DialogScreen>
 
