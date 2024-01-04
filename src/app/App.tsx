@@ -1,7 +1,7 @@
 import React from 'react'
-import { Header } from '../common/layout/header/Header'
-import { AsideLeft } from '../common/layout/asideLeft/AsideLeft'
-import { Main } from '../common/layout/main/Main'
+import { Header } from 'common/ui/Header/Header'
+import { AsideLeft } from 'common/ui/AsideLeft/AsideLeft'
+import { Main } from 'app/ui/Main/Main'
 import { Layout } from '../common/components/Layout'
 
 const App = () => {

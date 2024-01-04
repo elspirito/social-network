@@ -1,4 +1,4 @@
-import { addPostAC, setUserProfileAC } from 'features/profiles/model/profile.actions'
+import { addPostAC, setUserProfileAC } from 'features/profile/model/profile.actions'
 
 export enum ProfileActionsTypes {
   ADD_POST = 'ADD_POST',

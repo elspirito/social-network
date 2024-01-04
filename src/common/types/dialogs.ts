@@ -1,4 +1,4 @@
-import { dialogsAC } from '../../features/dialogs/model/dialogs.actions'
+import { dialogsAC } from '../../features/messages/model/dialogs.actions'
 
 export enum DialogsActionsTypes {
   SEND_MESSAGE = 'SEND_MESSAGE',

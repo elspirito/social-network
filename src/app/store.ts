@@ -2,9 +2,9 @@ import { AnyAction, applyMiddleware, combineReducers, legacy_createStore } from 
 import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk'
 import { UsersRootActionsType } from 'common/types/users'
 import { friendsReducer } from 'features/users/model/friends.reducer'
-import { dialogsReducer } from 'features/dialogs/model/dialogs.reducer'
+import { dialogsReducer } from 'features/messages/model/dialogs.reducer'
 import { usersReducer } from 'features/users/model/users.reducer'
-import { profileReducer } from 'features/profiles/model/profile.reducer'
+import { profileReducer } from 'features/profile/model/profile.reducer'
 import { ProfileRootActionsType } from 'common/types/profile'
 
 export const rootReducer = combineReducers({
