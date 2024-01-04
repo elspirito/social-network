@@ -11,6 +11,7 @@ import { addPostTC, setUserProfileTC } from 'features/profile/model/profile.acti
 import { PostType } from 'common/types/messages'
 import { Spin } from 'antd'
 import { selectUserIsLoadingStatus } from 'features/users/model/users.selector'
+import { useParams } from 'react-router-dom'
 
 export const ProfilePage: React.FC = () => {
   const dispatch = useAppDispatch()
@@ -18,14 +19,14 @@ export const ProfilePage: React.FC = () => {
   const profile = useSelector(selectProfile)
   const userIsLoadingStatus = useSelector(selectUserIsLoadingStatus)
 
-  console.log(profile)
+  const { userId } = useParams()
 
   const addPost = (text: string) => {
     dispatch(addPostTC(text))
   }
 
   useEffect(() => {
-    dispatch(setUserProfileTC(2))
+    dispatch(setUserProfileTC(Number(userId)))
   }, [dispatch])
 
   return (
