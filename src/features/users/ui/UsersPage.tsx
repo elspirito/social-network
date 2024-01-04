@@ -9,7 +9,7 @@ import {
   usersSelector,
 } from 'features/users/model/users.selector'
 import { useAppDispatch, useAppSelector } from 'common/hooks/customHooks'
-import { UserItem } from 'common/components/userItem/UserItem'
+import { UserItem } from 'common/components/UserItem/UserItem'
 import { Pagination, Spin } from 'antd'
 import { UserType } from 'common/types/users'
 

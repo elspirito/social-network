@@ -20,7 +20,7 @@ export const ProfilePage: React.FC = () => {
 
   // useEffect(() => {
   //   dispatch(setUserProfileTC(2))
-  // }, [dispatch])
+  // }, [])
 
   return (
     <StyledProfile>

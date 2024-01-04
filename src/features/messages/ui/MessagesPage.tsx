@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { DialogWindow } from 'features/messages/ui/DialogWindow/DialogWindow'
-import { FriendItem } from 'common/components/friendItem/FriendItem'
+import { FriendItem } from 'common/components/FriendItem/FriendItem'
 import { Search } from 'common/components/Search/Search'
 import { useSelector } from 'react-redux'
 import { selectFriends } from 'features/users/model/friends.selector'

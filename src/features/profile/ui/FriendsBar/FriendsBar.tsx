@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FriendItem } from 'common/components/friendItem/FriendItem'
+import { FriendItem } from 'common/components/FriendItem/FriendItem'
 import { useSelector } from 'react-redux'
 import { selectFriends } from 'features/users/model/friends.selector'
 
