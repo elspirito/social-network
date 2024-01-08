@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { PageTitle } from 'common/ui/PageTitle/PageTitle'
+import { PageTitle } from 'app/ui/PageTitle/PageTitle'
 import { Search } from 'common/components/Search/Search'
 
 export const ContentHeader = () => {

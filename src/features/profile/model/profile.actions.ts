@@ -1,9 +1,8 @@
-import { ProfileActionsTypes, UserProfile } from 'common/types/profile'
+import { ProfileActionsTypes, UserProfile } from 'common/types/profile.types'
 import { Dispatch } from 'redux'
 import { profileAPI } from 'features/profile/api/profile.api'
 import { AppThunk } from 'app/store'
-import { usersApi } from 'features/users/api/users.api'
-import { setCurrentPageAC, setLoadingStatusAC, setUsersAC } from 'features/users/model/users.actions'
+import { setLoadingStatusAC } from 'features/users/model/users.actions'
 
 // Actions
 export const addPostAC = (postText: string) => {

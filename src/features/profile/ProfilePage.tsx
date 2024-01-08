@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'common/hooks/customHooks'
 import { selectPosts, selectProfile } from 'features/profile/model/profile.selector'
 import { addPostTC, setUserProfileTC } from 'features/profile/model/profile.actions'
-import { PostType } from 'common/types/messages'
+import { PostType } from 'common/types/messages.types'
 import { Spin } from 'antd'
 import { selectUserIsLoadingStatus } from 'features/users/model/users.selector'
 import { useParams } from 'react-router-dom'
@@ -27,7 +27,7 @@ export const ProfilePage: React.FC = () => {
 
   useEffect(() => {
     dispatch(setUserProfileTC(Number(userId)))
-  }, [dispatch])
+  }, [dispatch, userId])
 
   return (
     <StyledProfile>

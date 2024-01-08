@@ -1,4 +1,4 @@
-import { UsersActionsTypes, UserType } from 'common/types/users'
+import { UsersActionsTypes, UserType } from 'common/types/users.types'
 import { usersApi } from '../api/users.api'
 import { AppThunk } from 'app/store'
 import { Dispatch } from 'redux'

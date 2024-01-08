@@ -1,5 +1,5 @@
 import { axiosInstance } from 'common/api/common.api'
-import { GetUsersResponseType } from 'common/types/users'
+import { GetUsersResponseType } from 'common/types/users.types'
 
 export const usersApi = {
   fetchUsers(currentPage: number, pageSize: number) {

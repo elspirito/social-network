@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { UserType } from '../../types/users'
+import { UserType } from 'common/types/users.types'
 import Avatar from 'antd/lib/avatar/avatar'
 import { useAppDispatch } from '../../hooks/customHooks'
 import { followUserAC } from '../../../features/users/model/users.actions'

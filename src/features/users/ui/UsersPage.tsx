@@ -11,7 +11,7 @@ import {
 import { useAppDispatch, useAppSelector } from 'common/hooks/customHooks'
 import { UserItem } from 'common/components/UserItem/UserItem'
 import { Pagination, Spin } from 'antd'
-import { UserType } from 'common/types/users'
+import { UserType } from 'common/types/users.types'
 
 export const UsersPage: FC = () => {
   const dispatch = useAppDispatch()

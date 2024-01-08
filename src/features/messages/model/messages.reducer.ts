@@ -1,5 +1,5 @@
 import { v1 } from 'uuid'
-import { MessagesActionsTypes, MessagesRootType, PostType } from 'common/types/messages'
+import { MessagesActionsTypes, MessagesRootType, PostType } from 'common/types/messages.types'
 
 const initState: PostType[] = [
   { id: v1(), messageText: 'haha' },

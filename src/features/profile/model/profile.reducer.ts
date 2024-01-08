@@ -1,6 +1,6 @@
 import { v1 } from 'uuid'
-import { ProfileActionsTypes, ProfileRootActionsType, UserProfile } from 'common/types/profile'
-import { PostType } from 'common/types/messages'
+import { ProfileActionsTypes, ProfileRootActionsType, UserProfile } from 'common/types/profile.types'
+import { PostType } from 'common/types/messages.types'
 
 const initState: ProfileStateType = {
   posts: [

@@ -1,4 +1,4 @@
-import { MessagesActionsTypes } from 'common/types/messages'
+import { MessagesActionsTypes } from 'common/types/messages.types'
 
 export const sendMessageAC = (messageText: string) => {
   return {

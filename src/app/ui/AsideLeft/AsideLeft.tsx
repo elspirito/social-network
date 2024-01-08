@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { UserBadge } from 'common/ui/UserBadge/UserBadge'
-import { Navbar } from 'common/ui/Navbar/Navbar'
+import { UserBadge } from 'app/ui/UserBadge/UserBadge'
+import { Navbar } from 'app/ui/Navbar/Navbar'
 
 export const AsideLeft = () => {
   return (

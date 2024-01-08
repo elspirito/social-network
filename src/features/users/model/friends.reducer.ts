@@ -1,6 +1,6 @@
 import { v1 } from 'uuid'
 import avatar_0004 from '../../../assets/img/avatars/avatar_0004.webp'
-import { FriendType } from 'common/types/friends'
+import { FriendType } from 'common/types/friends.types'
 
 const initState: FriendType[] = [
   { id: v1(), userPic: avatar_0004, firstName: 'Лариса', lastName: 'Невская', login: '@larisa', isOnline: true },

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { UserButton } from 'common/ui/UserButton/UserButton'
+import { UserButton } from 'app/ui/UserButton/UserButton'
 
 export const UserControls = () => {
   return (
