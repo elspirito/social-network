@@ -5,12 +5,14 @@ import { ContentHeader } from 'app/ui/ContentHeader/ContentHeader'
 import { UserControls } from 'app/ui/UserControls/UserControls'
 import { useAppDispatch } from 'common/hooks/customHooks'
 import { checkMeTC } from 'features/auth/model/auth.actions'
-import { selectIsLoggedIn } from 'features/auth/model/auth.selector'
+import { selectIsFetchingLoginData, selectIsLoggedIn } from 'features/auth/model/auth.selector'
 import { useSelector } from 'react-redux'
+import { Spin } from 'antd'
 
 export const Header = () => {
   const dispatch = useAppDispatch()
   const isLoggedIn = useSelector(selectIsLoggedIn)
+  const isLoginFetching = useSelector(selectIsFetchingLoginData)
 
   useEffect(() => {
     dispatch(checkMeTC())
@@ -20,7 +22,7 @@ export const Header = () => {
     <StyledHeader>
       <Logo />
       <ContentHeader />
-      {isLoggedIn ? <UserControls /> : <p>Login</p>}
+      {isLoginFetching ? <Spin /> : isLoggedIn ? <UserControls /> : <p>Login</p>}
     </StyledHeader>
   )
 }
