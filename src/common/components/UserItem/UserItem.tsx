@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { UserType } from 'common/types/users.types'
 import Avatar from 'antd/lib/avatar/avatar'
 import { useAppDispatch } from '../../hooks/customHooks'
-import { followUserAC } from '../../../features/users/model/users.actions'
+import { followUserTC, unfollowUserTC } from 'features/users/model/users.actions'
 import { NavLink } from 'react-router-dom'
 
 type PropsType = {
@@ -13,8 +13,11 @@ type PropsType = {
 export const UserItem: FC<PropsType> = ({ user }) => {
   const dispatch = useAppDispatch()
 
-  const onClickHandler = (userId: number) => {
-    dispatch(followUserAC(userId))
+  const followHandler = (userId: number) => {
+    dispatch(followUserTC(userId))
+  }
+  const unfollowHandler = (userId: number) => {
+    dispatch(unfollowUserTC(userId))
   }
 
   return (
@@ -29,7 +32,12 @@ export const UserItem: FC<PropsType> = ({ user }) => {
         </UserBody>
       </NavLink>
 
-      <button onClick={() => onClickHandler(user.id)}>{user.followed ? 'Unfollow' : 'Follow'}</button>
+      {/*<button onClick={() => onClickHandler(user.id)}>{user.followed ? 'Unfollow' : 'Follow'}</button>*/}
+      {!user.followed ? (
+        <button onClick={() => followHandler(user.id)}>Follow</button>
+      ) : (
+        <button onClick={() => unfollowHandler(user.id)}>Unfollow</button>
+      )}
     </>
   )
 }

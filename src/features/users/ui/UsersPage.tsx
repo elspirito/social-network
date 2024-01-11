@@ -6,7 +6,7 @@ import {
   selectUserIsLoadingStatus,
   selectUsersCurrentPage,
   selectUsersPagesCount,
-  usersSelector,
+  selectUsers,
 } from 'features/users/model/users.selector'
 import { useAppDispatch, useAppSelector } from 'common/hooks/customHooks'
 import { UserItem } from 'common/components/UserItem/UserItem'
@@ -16,7 +16,7 @@ import { UserType } from 'common/types/users.types'
 export const UsersPage: FC = () => {
   const dispatch = useAppDispatch()
 
-  const users = useAppSelector(usersSelector)
+  const users = useAppSelector(selectUsers)
   const usersPagesCount = useAppSelector(selectUsersPagesCount)
   const pageSize = useAppSelector(selectPageSize)
   const usersCurrentPage = useAppSelector(selectUsersCurrentPage)

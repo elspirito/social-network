@@ -8,6 +8,9 @@ export const usersAPI = {
   followUser(userId: number) {
     return axiosInstance.post<ResponseType>(`/follow/${userId}`)
   },
+  unfollowUser(userId: number) {
+    return axiosInstance.delete<ResponseType>(`/follow/${userId}`)
+  },
 }
 
 type ResponseType<T = {}> = {
