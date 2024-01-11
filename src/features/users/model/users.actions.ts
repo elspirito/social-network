@@ -1,5 +1,5 @@
 import { UsersActionsTypes, UserType } from 'common/types/users.types'
-import { usersApi } from '../api/users.api'
+import { usersAPI } from 'features/users/api/usersAPI'
 import { AppThunk } from 'app/store'
 import { Dispatch } from 'redux'
 
@@ -36,7 +36,7 @@ export const setUsersTC =
   (currentPage: number, pageSize: number): AppThunk =>
   (dispatch: Dispatch) => {
     dispatch(setLoadingStatusAC(true))
-    usersApi.fetchUsers(currentPage, pageSize).then((res) => {
+    usersAPI.fetchUsers(currentPage, pageSize).then((res) => {
       dispatch(setUsersAC(res.data.items, res.data.totalCount, pageSize))
       dispatch(setCurrentPageAC(currentPage))
       dispatch(setLoadingStatusAC(false))

@@ -1,14 +1,17 @@
 import { axiosInstance } from 'common/api/common.api'
 import { GetUsersResponseType } from 'common/types/users.types'
 
-export const usersApi = {
+export const usersAPI = {
   fetchUsers(currentPage: number, pageSize: number) {
     return axiosInstance.get<GetUsersResponseType>(`/users?page=${currentPage}&count=${pageSize}`)
   },
+  followUser(userId: number) {
+    return axiosInstance.post<ResponseType>(`/follow/${userId}`)
+  },
 }
 
-// type ResponseType<T = {}> = {
-//   resultCode: number
-//   messages: string[]
-//   data: T
-// }
+type ResponseType<T = {}> = {
+  resultCode: number
+  messages: string[]
+  data: T
+}
