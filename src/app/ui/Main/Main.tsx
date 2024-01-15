@@ -5,18 +5,23 @@ import { MessagesPage } from 'features/messages/ui/MessagesPage'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { UsersPage } from 'features/users/ui/UsersPage'
 import { PageNotFound } from 'app/ui/PageNotFound/PageNotFound'
+import { PrivateRoute } from 'common/utils/PrivateRoute'
+import { Login } from 'features/auth/ui/Login/Login'
 
 export const Main: React.FC = () => {
   return (
     <StyledMain>
       <Routes>
-        <Route path={'/'} element={<Navigate to={'/profile'} />} />
+        <Route element={<PrivateRoute />}>
+          <Route path={'/'} element={<Navigate to={'/profile/2'} />} />
 
-        <Route path={'/profile/:userId'} element={<ProfilePage />} />
-        <Route path={'/messages'} element={<MessagesPage />} />
-        <Route path={'/users'} element={<UsersPage />} />
+          <Route path={'/profile/:userId'} element={<ProfilePage />} />
+          <Route path={'/messages'} element={<MessagesPage />} />
+          <Route path={'/users'} element={<UsersPage />} />
+        </Route>
 
         <Route path={'/*'} element={<PageNotFound />} />
+        <Route path={'/login'} element={<Login />} />
       </Routes>
     </StyledMain>
   )
