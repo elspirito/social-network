@@ -1,23 +1,20 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Logo } from 'app/ui/Logo/Logo'
 import { ContentHeader } from 'app/ui/ContentHeader/ContentHeader'
 import { UserControls } from 'app/ui/UserControls/UserControls'
-import { useAppDispatch } from 'common/hooks/customHooks'
-import { checkMeTC } from 'features/auth/model/auth.actions'
-import { selectIsFetchingLoginData, selectIsLoggedIn } from 'features/auth/model/auth.selector'
+import { selectIsLoggedIn } from 'features/auth/model/auth.selector'
 import { useSelector } from 'react-redux'
-import { Spin } from 'antd'
 
 export const Header = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn)
-  const isLoginFetching = useSelector(selectIsFetchingLoginData)
-
+  // const isLoginFetching = useSelector(selectIsFetchingLoginData)
+  console.log(isLoggedIn)
   return (
     <StyledHeader>
       <Logo />
       <ContentHeader />
-      {isLoginFetching ? <Spin /> : isLoggedIn ? <UserControls /> : <p>Login</p>}
+      {isLoggedIn ? <UserControls /> : <a href={'/login'}>Login</a>}
     </StyledHeader>
   )
 }

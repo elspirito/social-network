@@ -11,7 +11,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(checkMeTC())
-  }, [dispatch])
+  }, [])
 
   return (
     <Layout>
