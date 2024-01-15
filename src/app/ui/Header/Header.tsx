@@ -10,13 +10,8 @@ import { useSelector } from 'react-redux'
 import { Spin } from 'antd'
 
 export const Header = () => {
-  const dispatch = useAppDispatch()
   const isLoggedIn = useSelector(selectIsLoggedIn)
   const isLoginFetching = useSelector(selectIsFetchingLoginData)
-
-  useEffect(() => {
-    dispatch(checkMeTC())
-  }, [dispatch])
 
   return (
     <StyledHeader>
