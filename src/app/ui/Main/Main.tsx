@@ -13,7 +13,7 @@ export const Main: React.FC = () => {
     <StyledMain>
       <Routes>
         <Route element={<PrivateRoute />}>
-          <Route path={'/'} element={<Navigate to={'/profile/2'} />} />
+          <Route path={'/'} element={<Navigate to={'/profile/30150'} />} />
 
           <Route path={'/profile/:userId'} element={<ProfilePage />} />
           <Route path={'/messages'} element={<MessagesPage />} />
