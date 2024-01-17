@@ -14,6 +14,9 @@ export type LoginData = {
   id: number | null
   email: string | null
   login: string | null
+}
+
+export type IsMeData = {
   isLoggedIn: boolean
   isFetching: boolean
 }

@@ -1,6 +1,6 @@
-import { AuthActionsTypes, AuthRootActionsType, LoginData } from 'common/types/auth.types'
+import { AuthActionsTypes, AuthRootActionsType, IsMeData, LoginData } from 'common/types/auth.types'
 
-const initState: LoginData = {
+const initState: LoginData & IsMeData = {
   id: null,
   email: null,
   login: null,
@@ -13,10 +13,8 @@ export const authReducer = (state = initState, action: AuthRootActionsType) => {
     case AuthActionsTypes.CHECK_ME:
       return {
         ...state,
-        id: action.payload.data.id,
-        email: action.payload.data.email,
-        login: action.payload.data.login,
-        isLoggedIn: true,
+        ...action.payload.data,
+        isLoggedIn: action.payload.isLoggedIn,
       }
     case AuthActionsTypes.FETCHING_LOGIN_DATA:
       return {
