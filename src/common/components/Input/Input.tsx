@@ -1,14 +1,16 @@
-import React, { ChangeEvent } from 'react'
+import React, { ChangeEvent, FC } from 'react'
 import styled from 'styled-components'
 
 type PropsType = {
-  placeholder: string
+  placeholder?: string
   value: string
   onChange: (text: string) => void
   onKeyDown: (text: string) => void
+  onBlur?: () => void
+  autoFocus?: boolean
 }
 
-export const Input: React.FC<PropsType> = ({ placeholder, value, onChange, onKeyDown }) => {
+export const Input: FC<PropsType> = ({ placeholder, value, onChange, onKeyDown, onBlur, autoFocus }) => {
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     onChange(e.currentTarget.value)
   }
@@ -18,7 +20,16 @@ export const Input: React.FC<PropsType> = ({ placeholder, value, onChange, onKey
     }
   }
 
-  return <StyledInput placeholder={placeholder} value={value} onChange={onChangeHandler} onKeyDown={onKeyDownHandler} />
+  return (
+    <StyledInput
+      autoFocus={autoFocus}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChangeHandler}
+      onKeyDown={onKeyDownHandler}
+      onBlur={onBlur}
+    />
+  )
 }
 
 const StyledInput = styled.input`

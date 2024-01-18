@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 import headerImg from '../../../../assets/img/profileHeaderImg.png'
 import Avatar from 'antd/lib/avatar/avatar'
+import { Status } from 'features/profile/ui/Status/Status'
 
 type PropsType = {
   avatar?: string
@@ -14,6 +15,7 @@ export const ProfileHeader: FC<PropsType> = ({ avatar, name }) => {
       <ProfileHeadImg src={headerImg} />
       <Avatar src={avatar} size={100} />
       <h2>{name}</h2>
+      <Status />
     </StyledProfileHeader>
   )
 }

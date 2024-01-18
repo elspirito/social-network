@@ -10,6 +10,7 @@ const initState: ProfileStateType = {
     { id: v1(), messageText: 'test' },
   ],
   profile: null,
+  status: 'Что у вас нового?',
 }
 
 export const profileReducer = (state = initState, action: ProfileRootActionsType): ProfileStateType => {
@@ -23,7 +24,8 @@ export const profileReducer = (state = initState, action: ProfileRootActionsType
   }
 }
 
-type ProfileStateType = {
+export type ProfileStateType = {
   posts: PostType[]
   profile: UserProfile | null
+  status: string
 }
