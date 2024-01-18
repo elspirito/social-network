@@ -21,18 +21,31 @@ export const setUserProfileAC = (profile: UserProfile) => {
     },
   } as const
 }
+export const setUserStatusAC = (status: string) => {
+  return {
+    type: ProfileActionsTypes.SET_USER_STATUS,
+    payload: {
+      status,
+    },
+  } as const
+}
 
 //Thunks
 export const addPostTC = (postText: string) => (dispatch: Dispatch) => {
   dispatch(addPostAC(postText))
 }
-
 export const setUserProfileTC =
   (userId: number): AppThunk =>
   async (dispatch: Dispatch) => {
     dispatch(setLoadingStatusAC(true))
-    profileAPI.getUserProfile(userId).then((res) => {
-      dispatch(setUserProfileAC(res.data))
-      dispatch(setLoadingStatusAC(false))
-    })
+    const res = await profileAPI.getUserProfile(userId)
+    dispatch(setUserProfileAC(res.data))
+    dispatch(setLoadingStatusAC(false))
   }
+export const setUserStatusTC = (userId: number) => async (dispatch: Dispatch) => {
+  const res = await profileAPI.getUserStatus(userId)
+  if (res.statusText) {
+    dispatch(setUserStatusAC(res.statusText))
+  }
+  dispatch(setUserStatusAC('res.statusText'))
+}

@@ -7,7 +7,7 @@ import { ProfileAside } from 'features/profile/ui/ProfileAside/ProfileAside'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'common/hooks/customHooks'
 import { selectPosts, selectProfile } from 'features/profile/model/profile.selector'
-import { addPostTC, setUserProfileTC } from 'features/profile/model/profile.actions'
+import { addPostTC, setUserProfileTC, setUserStatusTC } from 'features/profile/model/profile.actions'
 import { PostType } from 'common/types/messages.types'
 import { Spin } from 'antd'
 import { selectUserIsLoadingStatus } from 'features/users/model/users.selector'
@@ -27,6 +27,7 @@ export const ProfilePage: React.FC = () => {
 
   useEffect(() => {
     dispatch(setUserProfileTC(Number(userId)))
+    dispatch(setUserStatusTC(Number(userId)))
   }, [dispatch, userId])
 
   return (

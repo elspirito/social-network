@@ -1,22 +1,23 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import styled from 'styled-components'
 import { Input } from 'common/components/Input/Input'
-import { useAppSelector } from 'common/hooks/customHooks'
-import { selectStatus } from 'features/profile/model/profile.selector'
 
-export const Status = () => {
+type Props = {
+  status: string
+}
+
+export const UserStatus: FC<Props> = ({ status }) => {
   const [isActive, setIsActive] = useState(false)
-  const status = useAppSelector(selectStatus)
 
   return (
-    <StyledStatus>
+    <StyledUserStatus>
       {isActive ? (
         <Input autoFocus value={status} onKeyDown={() => {}} onChange={() => {}} onBlur={() => setIsActive(false)} />
       ) : (
         <p onClick={() => setIsActive(true)}>{status}</p>
       )}
-    </StyledStatus>
+    </StyledUserStatus>
   )
 }
 
-const StyledStatus = styled.div``
+const StyledUserStatus = styled.div``

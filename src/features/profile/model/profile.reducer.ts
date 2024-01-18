@@ -10,7 +10,7 @@ const initState: ProfileStateType = {
     { id: v1(), messageText: 'test' },
   ],
   profile: null,
-  status: 'Что у вас нового?',
+  status: '',
 }
 
 export const profileReducer = (state = initState, action: ProfileRootActionsType): ProfileStateType => {
@@ -19,6 +19,8 @@ export const profileReducer = (state = initState, action: ProfileRootActionsType
       return { ...state, posts: [{ id: v1(), messageText: action.payload.postText }, ...state.posts] }
     case ProfileActionsTypes.SET_USER_PROFILE:
       return { ...state, profile: action.payload.profile }
+    case ProfileActionsTypes.SET_USER_STATUS:
+      return { ...state, status: action.payload.status }
     default:
       return state
   }

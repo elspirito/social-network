@@ -2,7 +2,9 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 import headerImg from '../../../../assets/img/profileHeaderImg.png'
 import Avatar from 'antd/lib/avatar/avatar'
-import { Status } from 'features/profile/ui/Status/Status'
+import { UserStatus } from 'features/profile/ui/UserStatus/UserStatus'
+import { useAppSelector } from 'common/hooks/customHooks'
+import { selectStatus } from 'features/profile/model/profile.selector'
 
 type PropsType = {
   avatar?: string
@@ -10,12 +12,14 @@ type PropsType = {
 }
 
 export const ProfileHeader: FC<PropsType> = ({ avatar, name }) => {
+  const status = useAppSelector(selectStatus)
+  console.log(status)
   return (
     <StyledProfileHeader>
       <ProfileHeadImg src={headerImg} />
       <Avatar src={avatar} size={100} />
       <h2>{name}</h2>
-      <Status />
+      <UserStatus status={status} />
     </StyledProfileHeader>
   )
 }

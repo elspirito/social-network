@@ -1,14 +1,16 @@
-import { addPostAC, setUserProfileAC } from 'features/profile/model/profile.actions'
+import { addPostAC, setUserProfileAC, setUserStatusAC } from 'features/profile/model/profile.actions'
 
 export enum ProfileActionsTypes {
   ADD_POST = 'ADD_POST',
   SET_USER_PROFILE = 'SET_USER_PROFILE',
+  SET_USER_STATUS = 'SET_USER_STATUS',
 }
 
 type AddPostsACType = ReturnType<typeof addPostAC>
 type SetUserProfileACType = ReturnType<typeof setUserProfileAC>
+type SetUserStatusACType = ReturnType<typeof setUserStatusAC>
 
-export type ProfileRootActionsType = AddPostsACType | SetUserProfileACType
+export type ProfileRootActionsType = AddPostsACType | SetUserProfileACType | SetUserStatusACType
 
 export type UserProfile = {
   aboutMe: string
