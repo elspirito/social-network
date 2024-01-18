@@ -44,8 +44,9 @@ export const setUserProfileTC =
   }
 export const setUserStatusTC = (userId: number) => async (dispatch: Dispatch) => {
   const res = await profileAPI.getUserStatus(userId)
-  if (res.statusText) {
-    dispatch(setUserStatusAC(res.statusText))
+  if (res.data) {
+    dispatch(setUserStatusAC(res.data))
+  } else {
+    dispatch(setUserStatusAC('Что у вас нового?'))
   }
-  dispatch(setUserStatusAC('res.statusText'))
 }

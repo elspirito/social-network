@@ -5,7 +5,10 @@ export const profileAPI = {
     return axiosInstance.get(`/profile/${userId}`)
   },
   getUserStatus(userId: number) {
-    return axiosInstance.get<ResponseType>(`/profile/status/${userId}`)
+    return axiosInstance.get(`/profile/status/${userId}`)
+  },
+  setUserStatus(status: string) {
+    return axiosInstance.put(`/profile/status`)
   },
 }
 
