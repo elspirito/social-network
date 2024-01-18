@@ -7,8 +7,8 @@ export const profileAPI = {
   getUserStatus(userId: number) {
     return axiosInstance.get(`/profile/status/${userId}`)
   },
-  setUserStatus(status: string) {
-    return axiosInstance.put(`/profile/status`)
+  updateUserStatus(status: string) {
+    return axiosInstance.put<ResponseType>(`/profile/status`, { status })
   },
 }
 

@@ -29,6 +29,14 @@ export const setUserStatusAC = (status: string) => {
     },
   } as const
 }
+export const updateUserStatusAC = (status: string) => {
+  return {
+    type: ProfileActionsTypes.UPDATE_USER_STATUS,
+    payload: {
+      status,
+    },
+  } as const
+}
 
 //Thunks
 export const addPostTC = (postText: string) => (dispatch: Dispatch) => {
@@ -48,5 +56,11 @@ export const setUserStatusTC = (userId: number) => async (dispatch: Dispatch) =>
     dispatch(setUserStatusAC(res.data))
   } else {
     dispatch(setUserStatusAC('Что у вас нового?'))
+  }
+}
+export const updateUserStatusTC = (status: string) => async (dispatch: Dispatch) => {
+  const res = await profileAPI.updateUserStatus(status)
+  if (res.data.resultCode === 0) {
+    dispatch(updateUserStatusAC(status))
   }
 }
