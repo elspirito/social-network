@@ -21,6 +21,8 @@ export const profileReducer = (state = initState, action: ProfileRootActionsType
       return { ...state, profile: action.payload.profile }
     case ProfileActionsTypes.SET_USER_STATUS:
       return { ...state, status: action.payload.status }
+    case ProfileActionsTypes.UPDATE_USER_STATUS:
+      return { ...state, status: action.payload.status }
     default:
       return state
   }
