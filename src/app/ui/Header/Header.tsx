@@ -8,7 +8,6 @@ import { useSelector } from 'react-redux'
 
 export const Header = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn)
-  // const isLoginFetching = useSelector(selectIsFetchingLoginData)
   console.log(isLoggedIn)
   return (
     <StyledHeader>

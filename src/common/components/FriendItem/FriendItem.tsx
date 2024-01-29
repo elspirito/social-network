@@ -25,7 +25,7 @@ export const FriendItem: React.FC<FriendLinkPropsType> = ({ firstName, lastName,
         </UserName>
         <LoginName>{login}</LoginName>
       </FullName>
-      {icon && <span className="material-symbols-outlined">{icon}</span>}
+      {icon && <span className='material-symbols-outlined'>{icon}</span>}
     </StyledFriendItem>
   )
 }

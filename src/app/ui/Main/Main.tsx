@@ -8,13 +8,12 @@ import { PageNotFound } from 'app/ui/PageNotFound/PageNotFound'
 import { PrivateRoute } from 'common/utils/PrivateRoute'
 import { Login } from 'features/auth/ui/Login/Login'
 
-export const Main: React.FC = () => {
+export const Main = () => {
   return (
     <StyledMain>
       <Routes>
+        <Route path={'/'} element={<Navigate to={'/profile/30150'} />} />
         <Route element={<PrivateRoute />}>
-          <Route path={'/'} element={<Navigate to={'/profile/30150'} />} />
-
           <Route path={'/profile/:userId'} element={<ProfilePage />} />
           <Route path={'/messages'} element={<MessagesPage />} />
           <Route path={'/users'} element={<UsersPage />} />
